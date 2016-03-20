@@ -19,11 +19,11 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/JLSlideMenuController"
+  s.homepage         = "https://github.com/josechagas/JLSlideMenuController"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "José Lucas" => "joselucas1994@yahoo.com.br" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/JLSlideMenuController.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/josechagas/JLSlideMenuController.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '8.0'

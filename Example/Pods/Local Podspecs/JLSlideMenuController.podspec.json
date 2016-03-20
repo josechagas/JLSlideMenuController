@@ -1,0 +1,25 @@
+{
+  "name": "JLSlideMenuController",
+  "version": "0.1.0",
+  "summary": "A short description of JLSlideMenuController.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/JLSlideMenuController",
+  "license": "MIT",
+  "authors": {
+    "José Lucas": "joselucas1994@yahoo.com.br"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/JLSlideMenuController.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "JLSlideMenuController": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}
