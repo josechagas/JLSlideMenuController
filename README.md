@@ -27,3 +27,4 @@ José Lucas, joselucas1994@yahoo.com.br
 ## License
 
 JLSlideMenuController is available under the MIT license. See the LICENSE file for more info.
+
