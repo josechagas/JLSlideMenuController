@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'JLSlideMenuController_Example', :exclusive => true do
+  pod 'JLSlideMenuController', :path => '../'
+end
+
+target 'JLSlideMenuController_Tests', :exclusive => true do
+  pod 'JLSlideMenuController', :path => '../'
+
+  
+end
