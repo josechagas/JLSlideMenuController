@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  JLSlideMenuController: 5d6bb09a537302fbcec573c7a9b213bcd70bd15e
+  JLSlideMenuController: 1fb09600a6c0c99b4c5f8b8ff8e7b17313c3fb66
 
 COCOAPODS: 0.39.0

@@ -1,15 +1,15 @@
 {
   "name": "JLSlideMenuController",
   "version": "0.1.0",
-  "summary": "A short description of JLSlideMenuController.",
+  "summary": "A short description of my JLSlideMenuController.",
   "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/JLSlideMenuController",
+  "homepage": "https://github.com/josechagas/JLSlideMenuController",
   "license": "MIT",
   "authors": {
     "José Lucas": "joselucas1994@yahoo.com.br"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/JLSlideMenuController.git",
+    "git": "https://github.com/josechagas/JLSlideMenuController.git",
     "tag": "0.1.0"
   },
   "platforms": {

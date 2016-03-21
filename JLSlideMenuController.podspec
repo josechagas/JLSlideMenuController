@@ -9,14 +9,14 @@
 Pod::Spec.new do |s|
   s.name             = "JLSlideMenuController"
   s.version          = "0.1.0"
-  s.summary          = "A short description of my JLSlideMenuController."
+  s.summary          = "JLSlideMenuController, a easy and cusmomizable way to create your slide menu"
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
-  s.description      = <<-DESC
+  s.description      = <<-DESC This is a library that makes the hard work to control and create the slide menu for you. It allows you to create a completely customizable menu in a easy way using most of the time only the storyboard and its completely in Swift. I hope it will helps you make you app faster.
                        DESC
 
   s.homepage         = "https://github.com/josechagas/JLSlideMenuController"
