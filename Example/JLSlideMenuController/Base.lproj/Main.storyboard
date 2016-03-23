@@ -1,54 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ET2-3i-Dfe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="D12-ai-9k0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="7hQ-II-s44">
+            <objects>
+                <tabBarController id="D12-ai-9k0" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="C77-RY-AcD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ET2-3i-Dfe" kind="relationship" relationship="viewControllers" id="f9U-Ei-jrH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jzv-7G-hFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1539" y="299"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="seF-1e-d27">
             <objects>
                 <navigationController id="ET2-3i-Dfe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="FMG-nN-VRd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZjE-az-nWo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="hPS-20-BVg" kind="relationship" relationship="rootViewController" id="nFa-fZ-P2g"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Ck3-2W-VQp"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rzk-4w-kaz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-747" y="299"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="jRt-fF-PHF">
-            <objects>
-                <viewController id="hPS-20-BVg" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="4eC-md-bOP"/>
-                        <viewControllerLayoutGuide type="bottom" id="NiX-1C-Y43"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9ZL-Js-7bz">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMj-g0-w7Z">
-                                <rect key="frame" x="283" y="285" width="35" height="30"/>
-                                <state key="normal" title="teste"/>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="show" id="cxT-S0-APW"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.98866760841835266" blue="0.81710078519284468" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="78k-2q-XFu"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bse-g6-ibf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-113" y="299"/>
+            <point key="canvasLocation" x="-845" y="299"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -68,7 +58,7 @@
                                     <constraint firstAttribute="height" constant="240" id="cUW-rq-ucY"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is a simple test of pods , I hope it will help you" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Sj4-oI-GIU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="This is a simple test of pods , I hope it will help you" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Sj4-oI-GIU">
                                 <rect key="frame" x="30" y="245" width="540" height="345"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -95,12 +85,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="image" destination="LVF-yd-MB2" id="Tsh-bd-5Fv"/>
-                        <segue destination="lMk-gq-pWS" kind="show" identifier="firstToSecond" id="eU7-gm-Lei"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="569" y="299"/>
+            <point key="canvasLocation" x="-86" y="299"/>
         </scene>
         <!--My Menu View Controller-->
         <scene sceneID="jTp-UM-gzC">
@@ -156,7 +145,6 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.36940404921045489" green="1" blue="0.74213338976035437" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="JrA-rC-T6N" firstAttribute="leading" secondItem="Wyr-ge-Lgp" secondAttribute="leading" id="22t-Mu-hDr"/>
                             <constraint firstItem="uxK-iF-ucX" firstAttribute="top" secondItem="Wyr-ge-Lgp" secondAttribute="top" id="2C4-w5-JsT"/>
@@ -177,15 +165,61 @@
             </objects>
             <point key="canvasLocation" x="1159" y="-471"/>
         </scene>
+        <!--Fourth View Controller-->
+        <scene sceneID="xL5-fi-Qnf">
+            <objects>
+                <viewController storyboardIdentifier="FourthVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IkV-1B-ReY" customClass="FourthViewController" customModule="JLSlideMenuController_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ojH-Um-B0K"/>
+                        <viewControllerLayoutGuide type="bottom" id="yXb-zq-StX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9sr-mQ-MXx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="terceira tela do menu" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-gx-QLE">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="R5L-qU-F1s"/>
+                                    <constraint firstAttribute="height" constant="128" id="WVr-Ub-QOe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gYt-gx-QLE" firstAttribute="centerY" secondItem="9sr-mQ-MXx" secondAttribute="centerY" id="jsA-rE-cRj"/>
+                            <constraint firstItem="gYt-gx-QLE" firstAttribute="centerX" secondItem="9sr-mQ-MXx" secondAttribute="centerX" id="pwE-ji-BGo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pge-zp-ttw">
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="5YW-4I-geM">
+                            <connections>
+                                <action selector="showSlideMenu:" destination="IkV-1B-ReY" id="NQw-nf-MPj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j5S-CS-7F1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490" y="-390"/>
+        </scene>
         <!--Second View Controller-->
         <scene sceneID="E2b-9q-MUn">
             <objects>
-                <viewController id="lMk-gq-pWS" customClass="SecondViewController" customModule="JLSlideMenuController_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="SecondVC" storyboardIdentifier="SecondVC" id="lMk-gq-pWS" customClass="SecondViewController" customModule="JLSlideMenuController_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sy9-Kt-wjm"/>
+                        <viewControllerLayoutGuide type="bottom" id="9xb-fq-O3X"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="de3-zk-JnY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Outra tela de demonstracao" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dba-n3-2Ni">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="primeira tela do menu" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dba-n3-2Ni">
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -206,7 +240,7 @@
                     <navigationItem key="navigationItem" id="tfq-KM-m88">
                         <barButtonItem key="leftBarButtonItem" systemItem="compose" id="hgG-hT-fNB">
                             <connections>
-                                <action selector="showMenu:" destination="lMk-gq-pWS" id="XGP-8i-op4"/>
+                                <action selector="showSlideMenu:" destination="lMk-gq-pWS" id="yEJ-yf-SMv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -214,7 +248,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93I-eF-Hpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="-471"/>
+            <point key="canvasLocation" x="153" y="-390"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="WYf-Ff-089">
+            <objects>
+                <viewController restorationIdentifier="ThirdVC" storyboardIdentifier="ThirdVC" id="vqM-cr-3Md" customClass="ThirdViewController" customModule="JLSlideMenuController_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tOE-WN-WFt"/>
+                        <viewControllerLayoutGuide type="bottom" id="nxl-dp-nSA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DT5-FU-5yE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="segunda tela do menu" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xh6-Iy-PG3">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="BYg-Lg-wLb"/>
+                                    <constraint firstAttribute="width" constant="240" id="vEe-cM-Oij"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMl-mk-xhB">
+                                <rect key="frame" x="222" y="385" width="157" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.94168139984805543" blue="0.99046491094582956" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="EZ4-xy-sad"/>
+                                    <constraint firstAttribute="height" constant="30" id="QeJ-Uh-NYI"/>
+                                </constraints>
+                                <state key="normal" title="dismiss ViewController"/>
+                                <connections>
+                                    <action selector="dismissVC:" destination="vqM-cr-3Md" eventType="touchUpInside" id="90E-gM-fZL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.70457668377114113" green="0.97789868276833503" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Xh6-Iy-PG3" firstAttribute="centerX" secondItem="DT5-FU-5yE" secondAttribute="centerX" id="JVD-Pq-k5Q"/>
+                            <constraint firstItem="Xh6-Iy-PG3" firstAttribute="centerY" secondItem="DT5-FU-5yE" secondAttribute="centerY" id="NPB-go-Yqz"/>
+                            <constraint firstItem="NMl-mk-xhB" firstAttribute="centerY" secondItem="DT5-FU-5yE" secondAttribute="centerY" constant="100" id="deH-1m-XTL"/>
+                            <constraint firstItem="NMl-mk-xhB" firstAttribute="centerX" secondItem="DT5-FU-5yE" secondAttribute="centerX" id="hss-Pn-7Ph"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Yet-hP-svv">
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="UzZ-Ch-vtJ">
+                            <connections>
+                                <action selector="showSlideMenu:" destination="vqM-cr-3Md" id="BJT-dm-i8c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RnQ-f4-oTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="153" y="-1067"/>
         </scene>
     </scenes>
 </document>

@@ -13,8 +13,12 @@ public class JLSlideMenuViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        //applyShadowEffects()
         // Do any additional setup after loading the view.
+    }
+    
+    public override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.view.layoutIfNeeded()
     }
 
     override public func didReceiveMemoryWarning() {
@@ -25,13 +29,66 @@ public class JLSlideMenuViewController: UIViewController {
     override public func prefersStatusBarHidden() -> Bool {
         return true
     }
-
-    private func applyShadowEffects(){
-        self.view.layer.shadowColor = UIColor.blackColor().CGColor
-        self.view.layer.shadowOffset = CGSize(width: -3, height: 10)
-        self.view.layer.shadowOpacity = 0.1
-        self.view.layer.shadowRadius = 9
-        self.view.layer.masksToBounds = false
+    /**
+     Call this method to present modally the correct view controller accordingly to some interaction
+     with the menu view controller
+     
+     - parameter VCId: The Id of the view controller to show
+     - parameter storyboardName: the name of the storyboard where the view controller is
+     - parameter animated: true to transition with some animation or not
+     */
+    
+    public func presentControllerModally(VCId:String,storyboardName:String,animated:Bool){
+        let destinyVC = JLSlideViewController.loadMenuVC(VCId, storyboardName: storyboardName)
+        
+        destinyVC.view.frame = self.parentViewController!.view.frame
+        
+        let menuSegue = UIStoryboardSegue(identifier: "actualViewToAnother", source: self.parentViewController!,
+            destination: destinyVC, performHandler: { () -> Void in
+                
+                self.parentViewController?.presentViewController(destinyVC, animated: animated, completion: nil)
+                
+        })
+        
+        self.prepareForSegue(menuSegue, sender: nil)
+        
+        menuSegue.perform()
+    }
+    
+    /**
+     Call this method to show the correct view controller accordingly to some interaction
+     with the menu view controller
+     
+     Use this one if the view controller where the menu is right now have some navigation controller
+     
+     - parameter VCId: The Id of the view controller to show
+     - parameter storyboardName: the name of the storyboard where the view controller is
+     - parameter animated: true to transition with some animation or not
+     */
+    public func showController(VCId:String,storyboardName:String,animated:Bool){
+        
+        let destinyVC = JLSlideViewController.loadMenuVC(VCId, storyboardName: storyboardName)
+        
+        destinyVC.view.frame = self.parentViewController!.view.frame
+        
+        let menuSegue = UIStoryboardSegue(identifier: "actualViewToAnother", source: self.parentViewController!,
+            destination: destinyVC, performHandler: { () -> Void in
+                
+               
+                if let navC = self.parentViewController!.navigationController{
+                    navC.pushViewController(destinyVC, animated: animated)
+                }
+                else{
+                    print("navigation controller nil no metodo showController")
+                }
+                
+        })
+        
+        self.prepareForSegue(menuSegue, sender: nil)
+        
+        menuSegue.perform()
+        
+     
     }
     
     /*

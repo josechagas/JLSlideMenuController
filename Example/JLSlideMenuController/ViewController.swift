@@ -17,24 +17,30 @@ class ViewController: JLSlideViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSlideMenu(0, width: 150, height: 320,comeFromLeft: true)
-        
+        addSlideMenu("MySlideMenu",storyboardName: "Main",distToTop: 0, width: 150, height: 320,comeFromLeft: true)
+
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
     @IBAction func showSlideMenu(sender: AnyObject) {
         
         
         if menuIsPresented(){
-            self.hideMenu()
+            self.hideMenu(true)
         }
         else{
-            self.showMenu()
+            self.showMenu(true)
 
         }
         
