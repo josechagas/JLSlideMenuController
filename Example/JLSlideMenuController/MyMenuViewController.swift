@@ -73,7 +73,6 @@ class MyMenuViewController: JLSlideMenuViewController,UITableViewDelegate,UITabl
 
         }
         else if indexPath.row == 1{
-            //self.showController("ThirdVC", storyboardName: "Main", animated: true)
             self.presentControllerModally("ThirdVC", storyboardName: "Main", animated: true)
         }
         else if indexPath.row == 2{

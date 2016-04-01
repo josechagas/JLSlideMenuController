@@ -32,7 +32,7 @@ import JLSlideMenuController
 
 ##### *Second Step*
 
-Remember that every View Controller that will have this menu shoul extends `JLSlideViewController`.
+Remember that every View Controller that will have this menu should extends `JLSlideViewController`.
 Example:
     
 ```swift
@@ -47,6 +47,10 @@ For that call this method.
 ```swift
 addSlideMenu(menuVCStoryboardID:String,storyboardName:String,distToTop:CGFloat,width:CGFloat,height:CGFloat,comeFromLeft:Bool)
 ```
+
+#### *Fourth Step*
+
+Your menu view controller should extends `JLSlideMenuViewController`.
     
     
 ## Quick Tips
@@ -57,6 +61,18 @@ addSlideMenu(menuVCStoryboardID:String,storyboardName:String,distToTop:CGFloat,w
 #### *Hiding the menu*
 ```swift
   hideMenu(animated:Bool)
+```
+
+#### *Presenting modally another view from the menu*
+
+```swift
+presentControllerModally(VCId:String,storyboardName:String,animated:Bool)
+```
+
+#### *Presenting another view from the menu*
+
+```swift
+showController(VCId:String,storyboardName:String,animated:Bool)
 ```
     
 ## *Do not forget to see the example*

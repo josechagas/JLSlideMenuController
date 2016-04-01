@@ -52,12 +52,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LVF-yd-MB2">
-                                <rect key="frame" x="10" y="0.0" width="580" height="240"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="cUW-rq-ucY"/>
-                                </constraints>
-                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is a simple test of pods , I hope it will help you" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Sj4-oI-GIU">
                                 <rect key="frame" x="30" y="245" width="540" height="296"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,13 +61,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1461911069402583" green="0.66666666666666663" blue="0.28188639735580101" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="LVF-yd-MB2" secondAttribute="trailing" constant="10" id="1YH-fs-X47"/>
-                            <constraint firstItem="LVF-yd-MB2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="8vD-Uv-5XU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Sj4-oI-GIU" secondAttribute="trailing" constant="10" id="9fd-qZ-6mk"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Sj4-oI-GIU" secondAttribute="bottom" constant="10" id="G9f-Ow-S3E"/>
                             <constraint firstItem="Sj4-oI-GIU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="GSh-sg-WOf"/>
-                            <constraint firstItem="Sj4-oI-GIU" firstAttribute="top" secondItem="LVF-yd-MB2" secondAttribute="bottom" constant="5" id="gem-MX-zab"/>
-                            <constraint firstItem="LVF-yd-MB2" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="sC2-3b-gGi"/>
+                            <constraint firstItem="Sj4-oI-GIU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="181" id="Qmt-gI-w4n"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KnX-AL-vuy">
@@ -83,9 +74,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="image" destination="LVF-yd-MB2" id="Tsh-bd-5Fv"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,7 +124,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="570" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>

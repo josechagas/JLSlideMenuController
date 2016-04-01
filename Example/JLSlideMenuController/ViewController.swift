@@ -26,9 +26,10 @@ class ViewController: JLSlideViewController {
         super.viewWillAppear(animated)
         /**
         You can do something like this to make some configurations directly to your menu ViewController
+        for example block some button on menu because you are on the view of that button.
         */
         if let menu = self.myMenuVC as? MyMenuViewController{
-
+            // do any configuration here
         }
     }
     
@@ -49,27 +50,6 @@ class ViewController: JLSlideViewController {
             self.showMenu(true)
 
         }
-        
-        /*if let appDelegate = UIApplication.sharedApplication().delegate{
-            
-            let myView = UIView(frame:CGRectMake(0, 200, 30, 100))
-            myView.backgroundColor = UIColor.redColor()
-            
-            let frame = self.view.frame
-            
-            //change view controller position
-            self.view.frame = CGRect(x: 30, y: frame.origin.y, width: frame.size.width, height: frame.size.height)
-            
-
-            //change navigation bar position
-            self.navigationController?.navigationBar.frame.origin = CGPoint(x: 30, y: (self.navigationController?.navigationBar.frame.origin.y)!)
-            
-            //add a view on window
-            appDelegate.window!!.addSubview(myView)
-            //UIApplication.sharedApplication().windows[1].addSubview(myView)
-            //UIApplication.sharedApplication().windows[0].backgroundColor = UIColor.clearColor()
-
-        }*/
     }
 }
 
