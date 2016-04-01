@@ -24,6 +24,12 @@ class ViewController: JLSlideViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        /**
+        You can do something like this to make some configurations directly to your menu ViewController
+        */
+        if let menu = self.myMenuVC as? MyMenuViewController{
+
+        }
     }
     
     
