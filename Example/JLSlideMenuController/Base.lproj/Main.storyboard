@@ -52,7 +52,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is a simple test of pods , I hope it will help you" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Sj4-oI-GIU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is a simple test of pods , I hope it will help you" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Sj4-oI-GIU">
                                 <rect key="frame" x="30" y="245" width="540" height="296"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -165,7 +165,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="terceira tela do menu" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-gx-QLE">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="terceira tela do menu" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-gx-QLE">
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -207,7 +207,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="primeira tela do menu" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dba-n3-2Ni">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="primeira tela do menu" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dba-n3-2Ni">
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
