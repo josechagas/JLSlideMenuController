@@ -250,7 +250,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="segunda tela do menu" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xh6-Iy-PG3">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="segunda tela do menu" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xh6-Iy-PG3">
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -262,12 +262,14 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMl-mk-xhB">
                                 <rect key="frame" x="222" y="385" width="157" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.94168139984805543" blue="0.99046491094582956" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.56791306599755487" green="1" blue="0.57638077949976552" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="157" id="EZ4-xy-sad"/>
                                     <constraint firstAttribute="height" constant="30" id="QeJ-Uh-NYI"/>
                                 </constraints>
-                                <state key="normal" title="dismiss ViewController"/>
+                                <state key="normal" title="dismiss ViewController">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="dismissVC:" destination="vqM-cr-3Md" eventType="touchUpInside" id="90E-gM-fZL"/>
                                 </connections>
