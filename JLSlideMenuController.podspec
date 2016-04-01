@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "JLSlideMenuController"
-  s.version          = "0.1.3"
+  s.version          = "0.1.5"
   s.summary          = "JLSlideMenuController, a easy and cusmomizable way to create your slide menu"
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/**/*'
+  s.source_files = 'Pod/Classes/*.swift'
 #s.resource_bundles = {
 #    'JLSlideMenuController' => ['Pod/Assets/*.png']
 #  }
