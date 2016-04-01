@@ -24,39 +24,40 @@ pod "JLSlideMenuController"
 
 ##### *First Step*
 
-    Import it on every file that you will use this framework.
+Import it on every file that you will use this framework.
 
 ```swift
 import JLSlideMenuController
 ```
+
 ##### *Second Step*
 
-    Remember that every View Controller that will have this menu shoul extends `JLSlideViewController`.
-    Example:
+Remember that every View Controller that will have this menu shoul extends `JLSlideViewController`.
+Example:
     
-    ```swift
-    class ViewController: JLSlideViewController
-    ```
+```swift
+class ViewController: JLSlideViewController
+```
     
 ##### *Third Step*
 
-    Now you have to add the menu into your view controller.
-    For that call this method.
+Now you have to add the menu into your view controller.
+For that call this method.
     
-    ```swift
-    addSlideMenu(menuVCStoryboardID:String,storyboardName:String,distToTop:CGFloat,width:CGFloat,height:CGFloat,comeFromLeft:Bool)
-    ```
+```swift
+addSlideMenu(menuVCStoryboardID:String,storyboardName:String,distToTop:CGFloat,width:CGFloat,height:CGFloat,comeFromLeft:Bool)
+```
     
     
 ## Quick Tips
 ##### *Presenting the menu*
-  ```swift
+```swift
   showMenu(animated:Bool)
-    ```
+```
 #### *Hiding the menu*
 ```swift
   hideMenu(animated:Bool)
-    ```
+```
     
 ## *Do not forget to see the example*
 
