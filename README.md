@@ -10,7 +10,7 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
-
+If you want to use this framework you will need at least IOS 8!
 ## Installation
 
 JLSlideMenuController is available through [CocoaPods](http://cocoapods.org). To install
@@ -20,6 +20,47 @@ it, simply add the following line to your Podfile:
 pod "JLSlideMenuController"
 ```
 
+## Initial Configurations
+
+##### *First Step*
+
+    Import it on every file that you will use this framework.
+
+```swift
+import JLSlideMenuController
+```
+##### *Second Step*
+
+    Remember that every View Controller that will have this menu shoul extends `JLSlideViewController`.
+    Example:
+    
+    ```swift
+    class ViewController: JLSlideViewController
+    ```
+    
+##### *Third Step*
+
+    Now you have to add the menu into your view controller.
+    For that call this method.
+    
+    ```swift
+    addSlideMenu(menuVCStoryboardID:String,storyboardName:String,distToTop:CGFloat,width:CGFloat,height:CGFloat,comeFromLeft:Bool)
+    ```
+    
+    
+## Quick Tips
+##### *Presenting the menu*
+  ```swift
+  showMenu(animated:Bool)
+    ```
+#### *Hiding the menu*
+```swift
+  hideMenu(animated:Bool)
+    ```
+    
+## *Do not forget to see the example*
+
+    
 ## Author
 
 José Lucas, joselucas1994@yahoo.com.br
