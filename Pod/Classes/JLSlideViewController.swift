@@ -210,7 +210,7 @@ public class JLSlideViewController: UIViewController {
     private func checkIfShouldMoveBars(distToTop:CGFloat,height:CGFloat){
         
         if let _ = self.navigationController{
-            moveNavigationBar = distToTop == 0 ? true : false
+            moveNavigationBar = distToTop <= 0 ? true : false
 
         }
         
