@@ -7,52 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D8205AF363C319623A631F6D76DF522 /* JLSlideMenuController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E8BA6CD54258E5E46B403690981FE5 /* JLSlideMenuController-dummy.m */; };
+		5DB039BE3CAD4636997E9CC021F8D5AF /* JLSlideMenuController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 55CB44AFFE1267546C0A6EC3215AB509 /* JLSlideMenuController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DBFB881CD8DA5B2917A82F8F1D09CEC /* Pods-JLSlideMenuController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AD5A6DA1574ADD7FFEC3CF5984B9A88 /* Pods-JLSlideMenuController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5EE23D97E3E83399875354B924546699 /* Pods-JLSlideMenuController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B684D673159221B252555ABFC4DD2F /* Pods-JLSlideMenuController_Example-dummy.m */; };
-		7B5AA4CA06088A7864F7F6528EEE4959 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		7EBFF803C4BF3092A69542E356AADAB9 /* Pods-JLSlideMenuController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0021743EE4F50FEF169895437D9EA3A /* Pods-JLSlideMenuController_Tests-dummy.m */; };
 		A79261E7C98DC98356FF35B9219EE4AB /* Pods-JLSlideMenuController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B5A869729DDB95ACD25ABACF9699F0D /* Pods-JLSlideMenuController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BDA9136ABFE8301CB9D317396C9DFDC5 /* JLSlideMenuController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 481FB91A6FF0F92AA1E343C232A9082A /* JLSlideMenuController.bundle */; };
-		E2FD14741C2240BC7875229EF95EA553 /* JLSlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ED43C44510A4D2CED2656CB45B2B53 /* JLSlideMenuViewController.swift */; };
-		E9D50AD737112AFD2D80AE1044E982A3 /* JLSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44069ADC336F3339D6D105FEE17D792 /* JLSlideViewController.swift */; };
+		E10B19CD10974028EFA8E22553EC67B9 /* JLSlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ED43C44510A4D2CED2656CB45B2B53 /* JLSlideMenuViewController.swift */; };
+		E759C998CF36DC27170CCF34100D833F /* JLSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44069ADC336F3339D6D105FEE17D792 /* JLSlideViewController.swift */; };
 		EE409863280269401237323218CA2EA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		EF9CDD15A357E6DB74311B349EECC2D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		F8F2AC6B78B166CA10FD33E62849C82D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		FB0EF01AC970944249C4DAE82527C62A /* JLSlideMenuController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 55CB44AFFE1267546C0A6EC3215AB509 /* JLSlideMenuController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA3C843B0A666CDE36E44D7C6807F77E /* JLSlideMenuController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E8BA6CD54258E5E46B403690981FE5 /* JLSlideMenuController-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		326502638C9FDFCB0C5F8B7B7E671AB4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AB1CB02A388F160247BAF7B6E5280152;
-			remoteInfo = "JLSlideMenuController-JLSlideMenuController";
-		};
 		426BE9BF2CB3082B9CD3163AE910CD8B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A8C8CBFFDA8011C3FB16B19D9EA364BA;
+			remoteGlobalIDString = E37EB8E8DC86F71898D2B0BBE2911741;
 			remoteInfo = JLSlideMenuController;
 		};
 		B630EE984134104EF620BA57B9B080D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A8C8CBFFDA8011C3FB16B19D9EA364BA;
+			remoteGlobalIDString = E37EB8E8DC86F71898D2B0BBE2911741;
 			remoteInfo = JLSlideMenuController;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		07BA733351BFB42D60111CBBED632431 /* Pods-JLSlideMenuController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JLSlideMenuController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1EBDDFCFBDC237C2C9D14485EC80142E /* JLSlideMenuController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JLSlideMenuController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21A79B151D2855201A978585A68FAAB3 /* Pods-JLSlideMenuController_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLSlideMenuController_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		329FF844483E3BD3C67C0D4AB2010E07 /* Pods_JLSlideMenuController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLSlideMenuController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34E8BA6CD54258E5E46B403690981FE5 /* JLSlideMenuController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JLSlideMenuController-dummy.m"; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3ED691A8391B92BFE351C52ED4DED875 /* Pods-JLSlideMenuController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JLSlideMenuController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		40CF6EAFE1F24497B5ED7C5CB780FCBF /* Pods-JLSlideMenuController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLSlideMenuController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		481FB91A6FF0F92AA1E343C232A9082A /* JLSlideMenuController.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLSlideMenuController.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		48221C99241965BFBB13A2D6AA355053 /* Pods-JLSlideMenuController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLSlideMenuController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		49A07F9003BC1A7D092E37AFB6A21961 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AD5A6DA1574ADD7FFEC3CF5984B9A88 /* Pods-JLSlideMenuController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JLSlideMenuController_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -66,7 +59,6 @@
 		96B73A8D45DDBCE889013C53A729C048 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99ED43C44510A4D2CED2656CB45B2B53 /* JLSlideMenuViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLSlideMenuViewController.swift; sourceTree = "<group>"; };
 		9B5A869729DDB95ACD25ABACF9699F0D /* Pods-JLSlideMenuController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JLSlideMenuController_Tests-umbrella.h"; sourceTree = "<group>"; };
-		9D29F635BA70B6F05080A22C3663B2A1 /* Pods_JLSlideMenuController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLSlideMenuController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A225B4357E15D5AD751478A483BE11D3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B78FB87BE5A85F053D877F2DC488E5B6 /* Pods-JLSlideMenuController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JLSlideMenuController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -74,35 +66,27 @@
 		C0021743EE4F50FEF169895437D9EA3A /* Pods-JLSlideMenuController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JLSlideMenuController_Tests-dummy.m"; sourceTree = "<group>"; };
 		C44069ADC336F3339D6D105FEE17D792 /* JLSlideViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLSlideViewController.swift; sourceTree = "<group>"; };
 		D22F66AD65D146FFD4102924D3C10672 /* Pods-JLSlideMenuController_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLSlideMenuController_Tests-resources.sh"; sourceTree = "<group>"; };
-		D391B03F5CDEF8FAFB51B9F99F596231 /* Pods_JLSlideMenuController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLSlideMenuController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD1D774A5CD62CF873D64118DC1B3694 /* Pods-JLSlideMenuController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JLSlideMenuController_Example.modulemap"; sourceTree = "<group>"; };
 		E6D7B9A8055A9000C8D4E5F780966408 /* JLSlideMenuController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JLSlideMenuController.xcconfig; sourceTree = "<group>"; };
-		E79840FC8319F4667D5B1CE431890D21 /* JLSlideMenuController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JLSlideMenuController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B03A87D5EF04065421342DAB339F92 /* Pods-JLSlideMenuController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JLSlideMenuController_Tests.modulemap"; sourceTree = "<group>"; };
+		F5003161EEC2BE30A1CDDA44214E6731 /* Pods_JLSlideMenuController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLSlideMenuController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B684D673159221B252555ABFC4DD2F /* Pods-JLSlideMenuController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JLSlideMenuController_Example-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2A902C34D9D1F7925A3B666116DCAC82 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7B5AA4CA06088A7864F7F6528EEE4959 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6A5F9B4C558486A1D9F9418CC02B4004 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8D2427DFCFA68E57DF83E477A7E49486 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EE409863280269401237323218CA2EA1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DF040607DD40B2DF420EE55632D93A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF9CDD15A357E6DB74311B349EECC2D3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,13 +111,23 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		33960225DCC9B3655EB6690977ADC876 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1EBDDFCFBDC237C2C9D14485EC80142E /* JLSlideMenuController.framework */,
+				329FF844483E3BD3C67C0D4AB2010E07 /* Pods_JLSlideMenuController_Example.framework */,
+				F5003161EEC2BE30A1CDDA44214E6731 /* Pods_JLSlideMenuController_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				CA985FC132A863AFA43A7F6BD5366D99 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				C2CCB262897A3F1CA642C89B1B50E376 /* Products */,
+				33960225DCC9B3655EB6690977ADC876 /* Products */,
 				C739FD7AC0B061DD8B9E029524A074B6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -170,17 +164,6 @@
 				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		C2CCB262897A3F1CA642C89B1B50E376 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				481FB91A6FF0F92AA1E343C232A9082A /* JLSlideMenuController.bundle */,
-				E79840FC8319F4667D5B1CE431890D21 /* JLSlideMenuController.framework */,
-				9D29F635BA70B6F05080A22C3663B2A1 /* Pods_JLSlideMenuController_Example.framework */,
-				D391B03F5CDEF8FAFB51B9F99F596231 /* Pods_JLSlideMenuController_Tests.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C6D0E6A803280DD8FCA5B99153A0BA76 /* Classes */ = {
@@ -260,19 +243,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BCDFB9C2CED6FB2A0914F4B2759EBBB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DB039BE3CAD4636997E9CC021F8D5AF /* JLSlideMenuController-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8FE15030FA868A6E28504F8D32EDADD4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A79261E7C98DC98356FF35B9219EE4AB /* Pods-JLSlideMenuController_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9E6FD902D9C134A76881811341F8E388 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FB0EF01AC970944249C4DAE82527C62A /* JLSlideMenuController-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,44 +277,8 @@
 			);
 			name = "Pods-JLSlideMenuController_Tests";
 			productName = "Pods-JLSlideMenuController_Tests";
-			productReference = D391B03F5CDEF8FAFB51B9F99F596231 /* Pods_JLSlideMenuController_Tests.framework */;
+			productReference = F5003161EEC2BE30A1CDDA44214E6731 /* Pods_JLSlideMenuController_Tests.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		A8C8CBFFDA8011C3FB16B19D9EA364BA /* JLSlideMenuController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1C38114BCA83E47A211742897D5C39C0 /* Build configuration list for PBXNativeTarget "JLSlideMenuController" */;
-			buildPhases = (
-				2E2A96EDD6E531750EEA1757BC2D2695 /* Sources */,
-				2A902C34D9D1F7925A3B666116DCAC82 /* Frameworks */,
-				9E6F7C5CA9893CEE325D0BA992CCD675 /* Resources */,
-				9E6FD902D9C134A76881811341F8E388 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				72270D08006DBA447AA3FE078852D1FD /* PBXTargetDependency */,
-			);
-			name = JLSlideMenuController;
-			productName = JLSlideMenuController;
-			productReference = E79840FC8319F4667D5B1CE431890D21 /* JLSlideMenuController.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		AB1CB02A388F160247BAF7B6E5280152 /* JLSlideMenuController-JLSlideMenuController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6CFFA3ABF65A9FA745881634E5AB2F77 /* Build configuration list for PBXNativeTarget "JLSlideMenuController-JLSlideMenuController" */;
-			buildPhases = (
-				976E6516692D2BA45F9AA70D6195FC82 /* Sources */,
-				6A5F9B4C558486A1D9F9418CC02B4004 /* Frameworks */,
-				51F81BCD593145B1D75A2652D20E8E68 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "JLSlideMenuController-JLSlideMenuController";
-			productName = "JLSlideMenuController-JLSlideMenuController";
-			productReference = 481FB91A6FF0F92AA1E343C232A9082A /* JLSlideMenuController.bundle */;
-			productType = "com.apple.product-type.bundle";
 		};
 		B461DC660B505D4F34F3840E7EA4D095 /* Pods-JLSlideMenuController_Example */ = {
 			isa = PBXNativeTarget;
@@ -348,7 +295,24 @@
 			);
 			name = "Pods-JLSlideMenuController_Example";
 			productName = "Pods-JLSlideMenuController_Example";
-			productReference = 9D29F635BA70B6F05080A22C3663B2A1 /* Pods_JLSlideMenuController_Example.framework */;
+			productReference = 329FF844483E3BD3C67C0D4AB2010E07 /* Pods_JLSlideMenuController_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E37EB8E8DC86F71898D2B0BBE2911741 /* JLSlideMenuController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8824696D7EF4E8A11D91A6794AC004D4 /* Build configuration list for PBXNativeTarget "JLSlideMenuController" */;
+			buildPhases = (
+				AB1F6ACB186356865973FA1A9F189394 /* Sources */,
+				8DF040607DD40B2DF420EE55632D93A6 /* Frameworks */,
+				8BCDFB9C2CED6FB2A0914F4B2759EBBB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JLSlideMenuController;
+			productName = JLSlideMenuController;
+			productReference = 1EBDDFCFBDC237C2C9D14485EC80142E /* JLSlideMenuController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -368,35 +332,16 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = C2CCB262897A3F1CA642C89B1B50E376 /* Products */;
+			productRefGroup = 33960225DCC9B3655EB6690977ADC876 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A8C8CBFFDA8011C3FB16B19D9EA364BA /* JLSlideMenuController */,
-				AB1CB02A388F160247BAF7B6E5280152 /* JLSlideMenuController-JLSlideMenuController */,
+				E37EB8E8DC86F71898D2B0BBE2911741 /* JLSlideMenuController */,
 				B461DC660B505D4F34F3840E7EA4D095 /* Pods-JLSlideMenuController_Example */,
 				4AE98BA3D6E7967DA89F06CAD804DD6C /* Pods-JLSlideMenuController_Tests */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		51F81BCD593145B1D75A2652D20E8E68 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9E6F7C5CA9893CEE325D0BA992CCD675 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BDA9136ABFE8301CB9D317396C9DFDC5 /* JLSlideMenuController.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0876CF4DAD31AE6AC92BD25AACFF5F15 /* Sources */ = {
@@ -415,20 +360,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2E2A96EDD6E531750EEA1757BC2D2695 /* Sources */ = {
+		AB1F6ACB186356865973FA1A9F189394 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D8205AF363C319623A631F6D76DF522 /* JLSlideMenuController-dummy.m in Sources */,
-				E2FD14741C2240BC7875229EF95EA553 /* JLSlideMenuViewController.swift in Sources */,
-				E9D50AD737112AFD2D80AE1044E982A3 /* JLSlideViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		976E6516692D2BA45F9AA70D6195FC82 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				FA3C843B0A666CDE36E44D7C6807F77E /* JLSlideMenuController-dummy.m in Sources */,
+				E10B19CD10974028EFA8E22553EC67B9 /* JLSlideMenuViewController.swift in Sources */,
+				E759C998CF36DC27170CCF34100D833F /* JLSlideViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,24 +376,45 @@
 		282F012C54D4E25592AD98145D6F03B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JLSlideMenuController;
-			target = A8C8CBFFDA8011C3FB16B19D9EA364BA /* JLSlideMenuController */;
+			target = E37EB8E8DC86F71898D2B0BBE2911741 /* JLSlideMenuController */;
 			targetProxy = B630EE984134104EF620BA57B9B080D2 /* PBXContainerItemProxy */;
 		};
 		4842637527690AEB574F2DE23969677E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JLSlideMenuController;
-			target = A8C8CBFFDA8011C3FB16B19D9EA364BA /* JLSlideMenuController */;
+			target = E37EB8E8DC86F71898D2B0BBE2911741 /* JLSlideMenuController */;
 			targetProxy = 426BE9BF2CB3082B9CD3163AE910CD8B /* PBXContainerItemProxy */;
-		};
-		72270D08006DBA447AA3FE078852D1FD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "JLSlideMenuController-JLSlideMenuController";
-			target = AB1CB02A388F160247BAF7B6E5280152 /* JLSlideMenuController-JLSlideMenuController */;
-			targetProxy = 326502638C9FDFCB0C5F8B7B7E671AB4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0A081D1369176435E9993B97EF9AF4DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6D7B9A8055A9000C8D4E5F780966408 /* JLSlideMenuController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JLSlideMenuController/JLSlideMenuController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JLSlideMenuController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JLSlideMenuController/JLSlideMenuController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = JLSlideMenuController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -490,7 +449,7 @@
 			};
 			name = Release;
 		};
-		2F07B6D3F219ED598D6B1222E53A236F /* Debug */ = {
+		2CB5CB055D3C4D0C5291A4E5EEC5BAC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E6D7B9A8055A9000C8D4E5F780966408 /* JLSlideMenuController.xcconfig */;
 			buildSettings = {
@@ -587,33 +546,6 @@
 			};
 			name = Release;
 		};
-		87EB5DF4411CAB044F7510E549805C0F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6D7B9A8055A9000C8D4E5F780966408 /* JLSlideMenuController.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/JLSlideMenuController/JLSlideMenuController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JLSlideMenuController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/JLSlideMenuController/JLSlideMenuController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = JLSlideMenuController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		A7604275F61474567A32EE8445EC09A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40CF6EAFE1F24497B5ED7C5CB780FCBF /* Pods-JLSlideMenuController_Tests.debug.xcconfig */;
@@ -676,30 +608,6 @@
 			};
 			name = Debug;
 		};
-		D21546E246BCFC07ACD3A346FADB7612 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6D7B9A8055A9000C8D4E5F780966408 /* JLSlideMenuController.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = JLSlideMenuController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		D6628D98489AD7D8F8B9C64EF55613A0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6D7B9A8055A9000C8D4E5F780966408 /* JLSlideMenuController.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = JLSlideMenuController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		D7631B7A682027268C8520A8409FE396 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 48221C99241965BFBB13A2D6AA355053 /* Pods-JLSlideMenuController_Example.release.xcconfig */;
@@ -733,15 +641,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1C38114BCA83E47A211742897D5C39C0 /* Build configuration list for PBXNativeTarget "JLSlideMenuController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2F07B6D3F219ED598D6B1222E53A236F /* Debug */,
-				87EB5DF4411CAB044F7510E549805C0F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -769,11 +668,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6CFFA3ABF65A9FA745881634E5AB2F77 /* Build configuration list for PBXNativeTarget "JLSlideMenuController-JLSlideMenuController" */ = {
+		8824696D7EF4E8A11D91A6794AC004D4 /* Build configuration list for PBXNativeTarget "JLSlideMenuController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D21546E246BCFC07ACD3A346FADB7612 /* Debug */,
-				D6628D98489AD7D8F8B9C64EF55613A0 /* Release */,
+				2CB5CB055D3C4D0C5291A4E5EEC5BAC6 /* Debug */,
+				0A081D1369176435E9993B97EF9AF4DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

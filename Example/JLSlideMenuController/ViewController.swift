@@ -9,15 +9,17 @@
 import UIKit
 import JLSlideMenuController
 
+
+
 class ViewController: JLSlideViewController {
 
-    
-    
     @IBOutlet weak var image: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSlideMenu("MySlideMenu",storyboardName: "Main",distToTop: 0, width: 150, height: 320,comeFromLeft: true)
+        //addSlideMenu("MySlideMenu",storyboardName: "Main",distToTop: 0, width: 150, distToBottom: 568 - 320,comeFromLeft: true)
+        addSlideMenu("MySlideMenu",storyboardName: "Main",distToTop: 0, widthAspectRatio: 0.7, distToBottom: 568 - 320,comeFromLeft: true)
+
 
         // Do any additional setup after loading the view, typically from a nib.
     }

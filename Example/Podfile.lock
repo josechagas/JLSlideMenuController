@@ -1,5 +1,5 @@
 PODS:
-  - JLSlideMenuController (0.1.0)
+  - JLSlideMenuController (0.1.9)
 
 DEPENDENCIES:
   - JLSlideMenuController (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  JLSlideMenuController: 1fb09600a6c0c99b4c5f8b8ff8e7b17313c3fb66
+  JLSlideMenuController: 5ee574209d42365563d475ad3b5cec9c20cc9e23
 
 COCOAPODS: 0.39.0
