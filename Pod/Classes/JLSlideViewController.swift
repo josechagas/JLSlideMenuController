@@ -200,8 +200,8 @@ public class JLSlideViewController: UIViewController {
     
     private func applyShadowEffects(){
         menuContainerView.layer.shadowColor = UIColor.blackColor().CGColor
-        menuContainerView.layer.shadowOffset = CGSize(width: -3, height: 10)
-        menuContainerView.layer.shadowOpacity = 0.3
+        menuContainerView.layer.shadowOffset = CGSize(width: comeFromLeft ? 4 : -4, height: 10)
+        menuContainerView.layer.shadowOpacity = 0.4
         menuContainerView.layer.shadowRadius = 9
         menuContainerView.layer.masksToBounds = false
     }
