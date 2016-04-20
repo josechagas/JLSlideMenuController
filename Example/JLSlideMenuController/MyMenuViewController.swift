@@ -25,8 +25,7 @@ class MyMenuViewController: JLSlideMenuViewController,UITableViewDelegate,UITabl
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-        
+           
     //MARK: - TableView methods
     
     func configTableView(){

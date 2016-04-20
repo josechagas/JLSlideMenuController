@@ -17,7 +17,7 @@ public class JLSlideViewController: UIViewController {
     /**
      The instace of your menu View Controller associated to this View Controller
      */
-    private(set) public var myMenuVC:UIViewController!
+    private(set) public var myMenuVC:UIViewController?
     private var comeFromLeft:Bool = true
     
     
@@ -26,6 +26,8 @@ public class JLSlideViewController: UIViewController {
     private var distToTopC:NSLayoutConstraint!
     private var witdhRatio:NSLayoutConstraint!
     //
+    
+    private var panGes:UIPanGestureRecognizer!
     
     private var moveNavigationBar:Bool = false
     
@@ -42,9 +44,10 @@ public class JLSlideViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     public override func viewWillAppear(animated: Bool) {
-        checkIfShouldMoveBars(distToTopC.constant, height: menuContainerView.frame.height)
-        hideMenu(false)
-
+        if let _ = myMenuVC{
+            checkIfShouldMoveBars(distToTopC.constant, height: menuContainerView.frame.height)
+            hideMenu(false)
+        }
         super.viewWillAppear(animated)
       
     }
@@ -52,6 +55,7 @@ public class JLSlideViewController: UIViewController {
     public override func viewDidAppear(animated: Bool) {
         updateConstraints()
         super.viewDidAppear(animated)
+
     }
     
     
@@ -71,9 +75,9 @@ public class JLSlideViewController: UIViewController {
         
         return storyboard.instantiateViewControllerWithIdentifier(identifier)
     }
-    
+    //MARK: - Gestures
     private func addPanGesture(){
-        let panGes = UIPanGestureRecognizer(target: self, action: "panAction:")
+        panGes = UIPanGestureRecognizer(target: self, action: #selector(JLSlideViewController.panAction(_:)))
         
         self.view.addGestureRecognizer(panGes)
     }
@@ -82,23 +86,45 @@ public class JLSlideViewController: UIViewController {
     public func panAction(panGes:UIPanGestureRecognizer){
         let currenLocation = panGes.locationInView(self.view)
         if panGes.state == UIGestureRecognizerState.Began{
-
             panEnabled = false
-            let kFrame = CGRect(x: 0, y: menuContainerView.frame.origin.y, width: menuContainerView.frame.width, height: menuContainerView.frame.height)
-            if kFrame.contains(currenLocation){
-                panEnabled = true
-                lastPanTouch = currenLocation
+            if menuIsPresented(){
+                if self.menuContainerView.frame.contains(currenLocation){
+                    panEnabled = true
+                    lastPanTouch = currenLocation
+                }
             }
+            else{
+                let area = CGRect(x: comeFromLeft ? 0 : self.view.frame.width - 20, y: 0, width: 20, height: self.menuContainerView.frame.height)
+                
+                if area.contains(currenLocation){
+                    panEnabled = true
+                    lastPanTouch = currenLocation
+                }
+            }
+            
+
         }
         else if panGes.state == UIGestureRecognizerState.Ended{//at the end of pan gesture check if the menu is near to show or hide completelly and then finishes the movement
+            panEnabled = false
             let menuFrame = menuContainerView.frame
-            if menuFrame.origin.x < -menuFrame.size.width/2{
-                self.hideMenu(true)
+            if comeFromLeft{
+                if menuFrame.origin.x <= -menuFrame.size.width/2{
+                    self.hideMenu(true)
+                }
+                else if menuFrame.origin.x > -menuFrame.size.width/2{
+                    self.showMenu(true)
+                }
             }
-            else if menuFrame.origin.x >= -menuFrame.size.width/2{
-                self.showMenu(true)
-
+            else{
+                if menuFrame.origin.x >= self.view.frame.width - menuFrame.size.width/2{
+                    self.hideMenu(true)
+                }
+                else if menuFrame.origin.x < self.view.frame.width - menuFrame.size.width/2{
+                    self.showMenu(true)
+                }
             }
+            
+            
         }
         if panEnabled{//if the pan started at a right point continue
             menuContainerView.alpha = 1
@@ -106,19 +132,25 @@ public class JLSlideViewController: UIViewController {
             
             lastPanTouch = currenLocation
             
-            if self.sideDist.constant + xDeslocamento >= -self.menuContainerView.frame.width && self.sideDist.constant + xDeslocamento <= 0{
-                
-                self.sideDist.constant += xDeslocamento
-                
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    UIView.animateWithDuration(0.1, animations: { () -> Void in
-                        self.moveBarsBy(xDeslocamento, incrementTabXValue: xDeslocamento)
-                        self.view.layoutIfNeeded()
-                    })
-                })
-                
-                
+            if comeFromLeft{
+                if self.menuContainerView.frame.origin.x + xDeslocamento >= -self.menuContainerView.frame.width && self.menuContainerView.frame.origin.x + xDeslocamento <= 0{
+                    
+                    self.menuContainerView.frame.origin = CGPoint(x:self.menuContainerView.frame.origin.x + xDeslocamento ,y: self.menuContainerView.frame.origin.y)
+                    
+                    self.moveBarsBy(xDeslocamento, incrementTabXValue: xDeslocamento)
+                    
+                }
             }
+            else{
+                if self.menuContainerView.frame.origin.x + xDeslocamento >= self.view.frame.width - self.menuContainerView.frame.width  && self.menuContainerView.frame.origin.x + xDeslocamento <= self.view.frame.width{
+                    
+                    self.menuContainerView.frame.origin = CGPoint(x:self.menuContainerView.frame.origin.x + xDeslocamento ,y: self.menuContainerView.frame.origin.y)
+                    
+                    self.moveBarsBy(xDeslocamento, incrementTabXValue: xDeslocamento)
+                    
+                }
+            }
+            
 
         }
         
@@ -139,21 +171,19 @@ public class JLSlideViewController: UIViewController {
      - parameter height: the value of the constraint that determine your menu Height.
      
      - parameter comeFromLeft: the bolean value that indicates if your menu will come from left or from right of the window.
-     
-
      */
-    public func addSlideMenu(menuVCStoryboardID:String,storyboardName:String,distToTop:CGFloat,widthAspectRatio:CGFloat,distToBottom:CGFloat,comeFromLeft:Bool){
+    public func addSlideMenu(menuVCStoryboardID:String,storyboardName:String,distToTop:CGFloat,width:CGFloat,distToBottom:CGFloat,comeFromLeft:Bool){
         
         self.comeFromLeft = comeFromLeft
         
         myMenuVC = JLSlideViewController.loadMenuVC(menuVCStoryboardID,storyboardName: storyboardName)
         
-        menuContainerView = myMenuVC.view
+        menuContainerView = myMenuVC!.view
         menuContainerView.translatesAutoresizingMaskIntoConstraints = false
         menuContainerView.clipsToBounds = true
         
-        myMenuVC.didMoveToParentViewController(self)
-        self.addChildViewController(myMenuVC)
+        myMenuVC!.didMoveToParentViewController(self)
+        self.addChildViewController(myMenuVC!)
         
         self.view.addSubview(menuContainerView)
         
@@ -166,26 +196,23 @@ public class JLSlideViewController: UIViewController {
         distToTopC = NSLayoutConstraint(item: menuContainerView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: distToTop)
         self.view.addConstraint(distToTopC)
         
-        //let widthC = NSLayoutConstraint(item: menuContainerView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant:width)
+        let widthC = NSLayoutConstraint(item: menuContainerView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: width)
+        menuContainerView.addConstraint(widthC)
         
-        witdhRatio = NSLayoutConstraint(item: menuContainerView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Width, multiplier: widthAspectRatio, constant: 0)
-        self.view.addConstraint(witdhRatio)
-        
-        //let heightC = NSLayoutConstraint(item: menuContainerView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant:height)
-        //menuContainerView.addConstraint(heightC)
+        /*witdhRatio = NSLayoutConstraint(item: menuContainerView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Width, multiplier: widthAspectRatio, constant: 0)
+        self.view.addConstraint(witdhRatio)*/
         
         let distToBottomC = NSLayoutConstraint(item: menuContainerView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -distToBottom)
         self.view.addConstraint(distToBottomC)
         
         if comeFromLeft{
-            sideDist = NSLayoutConstraint(item:menuContainerView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant:-self.view.frame.width*widthAspectRatio)
+            sideDist = NSLayoutConstraint(item:menuContainerView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: -width/*-self.view.frame.width*widthAspectRatio*/)
             self.view.addConstraint(sideDist)
-            
+
         }
         else{
-            sideDist = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem:menuContainerView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant:-/*width*/self.view.frame.width*widthAspectRatio)
+            sideDist = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem:menuContainerView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant:-width/*self.view.frame.width*widthAspectRatio*/)
             self.view.addConstraint(sideDist)
-            
         }
         
         //
@@ -193,9 +220,13 @@ public class JLSlideViewController: UIViewController {
 
     }
     
+    /**
+     This method update the distance of the slide menu accordingly to updates of the self.view.frame.width value
+     */
     private func updateConstraints(){
         
-        sideDist.constant = -self.view.frame.width*witdhRatio.multiplier//self.view.frame.width
+        //sideDist.constant = -self.view.frame.width*witdhRatio.multiplier
+        //sideDist.constant = -self.navigationController!.navigationBar.frame.width*witdhRatio.multiplier
     }
     
     private func applyShadowEffects(){
@@ -218,7 +249,6 @@ public class JLSlideViewController: UIViewController {
             moveTabBar = tabBarController.tabBar.frame.origin.y + tabBarController.tabBar.frame.height < distToTop + height ? true : false
         }
         
-        
     }
     
     
@@ -226,7 +256,7 @@ public class JLSlideViewController: UIViewController {
      This method indicates if the menu VC is presented of not
      */
     public func menuIsPresented()->Bool{
-        return sideDist.constant == 0
+        return self.menuContainerView.frame.origin.x == 0 || self.menuContainerView.frame.origin.x == self.view.frame.width - self.menuContainerView.frame.width//menuContainerView.alpha == 1
     }
     
     /**
@@ -236,23 +266,37 @@ public class JLSlideViewController: UIViewController {
     public func showMenu(animated:Bool){
         menuContainerView.alpha = 1
         if animated{
-            sideDist.constant = 0
 
-            
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                UIView.animateWithDuration(0.4, delay: 0.2, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                
+                UIView.animateKeyframesWithDuration(0.3, delay: 0, options: UIViewKeyframeAnimationOptions.BeginFromCurrentState, animations: {
+                    if self.comeFromLeft{
+                        self.menuContainerView.frame.origin = CGPoint(x: 0,y: self.menuContainerView.frame.origin.y)
+                        self.moveBarsTo(self.menuContainerView.frame.width,newTabXValue: self.menuContainerView.frame.width)
+                    }
+                    else{
+                        self.menuContainerView.frame.origin = CGPoint(x: self.view.frame.width - self.menuContainerView.frame.width,y: self.menuContainerView.frame.origin.y)
+                        self.moveBarsTo(-self.menuContainerView.frame.width,newTabXValue: -self.menuContainerView.frame.width)
+                    }
                     
-                    self.moveBarsTo(self.menuContainerView.frame.width,newTabXValue: self.menuContainerView.frame.width)
-                    self.view.layoutIfNeeded()
-
-                    }, completion: nil)
-
+                    }, completion: { (finished) in
+                        if finished && self.menuIsPresented(){
+                            self.sideDist.constant = 0
+                            self.view.layoutIfNeeded()
+                        }
+                })
+                
             })
             
         }
         else{
             sideDist.constant = 0
-            self.moveBarsTo(menuContainerView.frame.width,newTabXValue: menuContainerView.frame.width)
+            if self.comeFromLeft{
+                self.moveBarsTo(self.menuContainerView.frame.width,newTabXValue: self.menuContainerView.frame.width)
+            }
+            else{
+                self.moveBarsTo(-self.menuContainerView.frame.width,newTabXValue: -self.menuContainerView.frame.width)
+            }
             self.view.layoutIfNeeded()
 
         }
@@ -263,21 +307,29 @@ public class JLSlideViewController: UIViewController {
      - parameter animated: true if you want animated and false if not
      */
     public func hideMenu(animated:Bool){
+        //sideDist.constant = -menuContainerView.frame.width
+        
         if animated{
-            sideDist.constant = -menuContainerView.frame.width
             
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                UIView.animateWithDuration(0.4, delay: 0.2, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-                    
-                    self.moveBarsTo(0,newTabXValue: 0)
-                    self.view.layoutIfNeeded()
-                    
-                    }){ (finished) -> Void in
-                        self.menuContainerView.alpha = 0
-                }
-
                 
+                UIView.animateKeyframesWithDuration(0.3, delay: 0, options: UIViewKeyframeAnimationOptions.BeginFromCurrentState, animations: {
+                    if self.comeFromLeft{
+                        self.menuContainerView.frame.origin = CGPoint(x: -self.menuContainerView.frame.width,y: self.menuContainerView.frame.origin.y)
+                    }
+                    else{
+                        self.menuContainerView.frame.origin = CGPoint(x: self.view.frame.width,y: self.menuContainerView.frame.origin.y)
+                    }
+                    self.moveBarsTo(0,newTabXValue: 0)
+                    
+                    }, completion: { (finished) in
+                        if finished && !self.menuIsPresented(){
+                            self.menuContainerView.alpha = 0
+                            self.sideDist.constant = -self.menuContainerView.frame.width
+                            self.view.layoutIfNeeded()
+                        }
+                })
             })
             
         }
@@ -286,6 +338,7 @@ public class JLSlideViewController: UIViewController {
             self.moveBarsTo(0,newTabXValue: 0)
             self.view.layoutIfNeeded()
             menuContainerView.alpha = 0
+
         }
     }
     
@@ -327,6 +380,7 @@ public class JLSlideViewController: UIViewController {
             if let navC = self.navigationController{
                 
                 navC.navigationBar.frame.origin = CGPoint(x: newNavXValue,y: self.navigationController!.navigationBar.frame.origin.y)
+            
             }
             else{
                 print("navigation controller nil no metodo moveBars")

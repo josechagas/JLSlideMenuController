@@ -21,6 +21,15 @@ public class JLSlideMenuViewController: UIViewController {
         self.view.layoutIfNeeded()
     }
 
+    override public func didMoveToParentViewController(parent: UIViewController?) {
+        super.didMoveToParentViewController(parent)
+        //print(parent!.childViewControllers)
+    }
+
+    public override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

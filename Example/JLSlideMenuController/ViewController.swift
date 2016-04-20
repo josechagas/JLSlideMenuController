@@ -17,9 +17,8 @@ class ViewController: JLSlideViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //addSlideMenu("MySlideMenu",storyboardName: "Main",distToTop: 0, width: 150, distToBottom: 568 - 320,comeFromLeft: true)
-        addSlideMenu("MySlideMenu",storyboardName: "Main",distToTop: 0, widthAspectRatio: 0.7, distToBottom: 568 - 320,comeFromLeft: true)
 
+        addSlideMenu("MySlideMenu",storyboardName: "Main",distToTop: 0, width: 200, distToBottom: 0,comeFromLeft: true)
 
         // Do any additional setup after loading the view, typically from a nib.
     }
