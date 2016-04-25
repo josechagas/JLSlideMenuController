@@ -196,7 +196,7 @@ public class JLSlideNavigationController: UINavigationController {
     
     private func checkIfShouldAddOrUpdateMenu(){
         if let menuVC = JLSlideNavigationController.myMenuVC{//update or remove
-            if let myMenuVCID = self.menuVCStoryboardID ,storyboardName = self.storyboardName {
+            if let myMenuVCID = self.menuVCStoryboardID ,_ = self.storyboardName {
                 if myMenuVCID == menuVC.restorationIdentifier{//the same one
                     updateSlideMenu()
                 }
@@ -209,7 +209,7 @@ public class JLSlideNavigationController: UINavigationController {
             }
         }
         else{
-            if let myMenuVCID = self.menuVCStoryboardID ,storyboardName = self.storyboardName {
+            if let _ = self.menuVCStoryboardID ,_ = self.storyboardName {
                 addSlideMenu()
             }
         }
@@ -250,7 +250,7 @@ public class JLSlideNavigationController: UINavigationController {
         
         addPanGesture()
 
-        JLSlideNavigationController.myMenuVC = JLSlideNavigationController.loadMenuVC(menuVCStoryboardID!,storyboardName: storyboardName!) as!JLSlideMenuViewController
+        JLSlideNavigationController.myMenuVC = JLSlideNavigationController.loadMenuVC(menuVCStoryboardID!,storyboardName: storyboardName!) as?JLSlideMenuViewController
         
         JLSlideNavigationController.myMenuVC!.attachedNavController = self
         menuContainerView = JLSlideNavigationController.myMenuVC!.view
