@@ -45,7 +45,7 @@ public class JLSlideNavigationController: UINavigationController {
     private(set) static var myMenuVC:JLSlideMenuViewController?
     
     
-    private var panGes:UIPanGestureRecognizer?
+    private static var panGes:UIPanGestureRecognizer?
     
     /**
      Incicates that the pan gesture that were started enabled or not
@@ -56,14 +56,13 @@ public class JLSlideNavigationController: UINavigationController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        if let pan = panGes{
+        if let pan = JLSlideNavigationController.panGes{
             pan.enabled = true
         }
         // Do any additional setup after loading the view.
     }
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
     
     public override func viewDidAppear(animated: Bool) {
@@ -72,6 +71,7 @@ public class JLSlideNavigationController: UINavigationController {
         if let _ = self.view.window{
             checkIfShouldAddOrUpdateMenu()
         }
+        print(self.view.window!.gestureRecognizers!.count)
     }
     
     public override func viewWillDisappear(animated: Bool) {
@@ -81,7 +81,7 @@ public class JLSlideNavigationController: UINavigationController {
     
     public override func viewDidDisappear(animated: Bool) {
         super.viewDidAppear(animated)
-        if let pan = panGes{
+        if let pan = JLSlideNavigationController.panGes{
             pan.enabled = false
         }
     }
@@ -104,13 +104,14 @@ public class JLSlideNavigationController: UINavigationController {
     //MARK: - Gestures
     private func addPanGesture(){
         
-        guard let _ = panGes else{
-            panGes = UIPanGestureRecognizer(target: self, action: #selector(JLSlideNavigationController.panAction(_:)))
-            
-            self.view.addGestureRecognizer(panGes!)
-            return
+        if let window = self.view.window , pan = JLSlideNavigationController.panGes{
+            window.removeGestureRecognizer(pan)
         }
         
+        JLSlideNavigationController.panGes = UIPanGestureRecognizer(target: self, action: #selector(JLSlideNavigationController.panAction(_:)))
+        
+        //self.view.addGestureRecognizer(panGes!)
+        self.view.window?.addGestureRecognizer(JLSlideNavigationController.panGes!)
     }
     
     
@@ -127,7 +128,7 @@ public class JLSlideNavigationController: UINavigationController {
                     }
                 }
                 else{
-                    let area = CGRect(x: comeFromLeft ? 0 : self.view.frame.width - 20, y: 0, width: 20, height: menuView.frame.height)
+                    let area = CGRect(x: comeFromLeft ? 0 : self.view.frame.width - 40, y: 0, width: 40, height: menuView.frame.height)
                     
                     if area.contains(currenLocation){
                         panEnabled = true
@@ -326,6 +327,10 @@ public class JLSlideNavigationController: UINavigationController {
     public func showMenu(animated:Bool){
         
         if let menuView = menuContainerView where JLSlideNavigationController.myMenuVC!.enabled{
+            if let vc = JLSlideNavigationController.myMenuVC!.attachedNavController.topViewController{
+                vc.view.userInteractionEnabled = false
+            }
+
             menuView.alpha = 1
             if animated{
                 
@@ -347,6 +352,7 @@ public class JLSlideNavigationController: UINavigationController {
                             if finished && self.menuIsPresented(){
                                 JLSlideNavigationController.myMenuVC!.sideDist.constant = 0
                                 self.view.layoutIfNeeded()
+
                             }
                     })
                     
@@ -354,7 +360,7 @@ public class JLSlideNavigationController: UINavigationController {
                 
             }
             else{
-                
+               
                 JLSlideNavigationController.myMenuVC!.sideDist.constant = 0
                 
                 self.view.layoutIfNeeded()
@@ -374,6 +380,12 @@ public class JLSlideNavigationController: UINavigationController {
         
         if let menuView = menuContainerView where JLSlideNavigationController.myMenuVC!.enabled{
             
+            
+            
+            if let vc = JLSlideNavigationController.myMenuVC!.attachedNavController.topViewController{
+                vc.view.userInteractionEnabled = true
+            }
+
             if animated{
                 
                 
