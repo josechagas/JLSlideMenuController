@@ -10,37 +10,86 @@
         <scene sceneID="7hQ-II-s44">
             <objects>
                 <tabBarController id="D12-ai-9k0" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9O8-R3-jyW">
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="KuL-m0-oJ8">
+                            <connections>
+                                <action selector="openMenu:" destination="D12-ai-9k0" id="MRE-eE-UkG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="C77-RY-AcD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ET2-3i-Dfe" kind="relationship" relationship="viewControllers" id="f9U-Ei-jrH"/>
+                        <segue destination="ET2-3i-Dfe" kind="relationship" relationship="viewControllers" id="g1h-uy-bW1"/>
+                        <segue destination="KVZ-l5-enk" kind="relationship" relationship="viewControllers" id="OhH-cw-PZi"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzv-7G-hFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1539" y="299"/>
+            <point key="canvasLocation" x="-1806" y="378"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="uJ6-AB-4ui">
+            <objects>
+                <viewController id="TUs-Yj-2y6" customClass="FithViewController" customModule="JLSlideMenuController_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N9F-Qn-IOz"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vzk-Vi-Y9a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LbT-H2-B1x">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="bgg-ib-ffL"/>
+                    <navigationItem key="navigationItem" id="byN-Wd-lPE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="2N9-DY-lav">
+                            <connections>
+                                <action selector="showSlideMenu:" destination="TUs-Yj-2y6" id="v2L-Yk-WXt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uq4-Rm-JwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-774" y="1157"/>
         </scene>
         <!--Item-->
         <scene sceneID="seF-1e-d27">
             <objects>
-                <navigationController id="ET2-3i-Dfe" sceneMemberID="viewController">
+                <navigationController id="ET2-3i-Dfe" customClass="JLSlideNavigationController" customModule="JLSlideMenuController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="FMG-nN-VRd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZjE-az-nWo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="distToTop">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="width">
+                            <real key="value" value="250"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="comeFromLeft" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="distToBottom">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="menuVCStoryboardID" value="MySlideMenu"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="Main"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="useShadowEffects" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Ck3-2W-VQp"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="4dh-kr-Jor"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rzk-4w-kaz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-845" y="299"/>
+            <point key="canvasLocation" x="-974" y="328"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="JLSlideMenuController_Example" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,17 +116,18 @@
                             <constraint firstItem="Sj4-oI-GIU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="181" id="Qmt-gI-w4n"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="68T-9U-mhD"/>
                     <navigationItem key="navigationItem" id="KnX-AL-vuy">
-                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="tcs-Nx-P0c">
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="Y2E-t4-cI8">
                             <connections>
-                                <action selector="showSlideMenu:" destination="vXZ-lx-hvc" id="Q5z-qU-hur"/>
+                                <action selector="showSlideMenu:" destination="vXZ-lx-hvc" id="xQL-5c-Hus"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-86" y="299"/>
+            <point key="canvasLocation" x="-196" y="328"/>
         </scene>
         <!--My Menu View Controller-->
         <scene sceneID="jTp-UM-gzC">
@@ -151,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brt-gW-kBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679" y="299"/>
+            <point key="canvasLocation" x="819" y="314"/>
         </scene>
         <!--Fourth View Controller-->
         <scene sceneID="xL5-fi-Qnf">
@@ -193,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5S-CS-7F1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-490" y="-390"/>
+            <point key="canvasLocation" x="-488" y="-440"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="E2b-9q-MUn">
@@ -226,9 +276,9 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="tfq-KM-m88">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="xsY-Hw-cbk">
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="TlT-Qo-Avx">
                             <connections>
-                                <action selector="showSlideMenu:" destination="lMk-gq-pWS" id="ngU-YQ-hY5"/>
+                                <action selector="showSlideMenu:" destination="lMk-gq-pWS" id="84c-8V-w7x"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -236,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93I-eF-Hpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="153" y="-390"/>
+            <point key="canvasLocation" x="393" y="-440"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="WYf-Ff-089">
@@ -294,7 +344,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnQ-f4-oTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="153" y="-1067"/>
+            <point key="canvasLocation" x="-57" y="-1157"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="yoB-us-tKs">
+            <objects>
+                <navigationController id="KVZ-l5-enk" customClass="JLSlideNavigationController" customModule="JLSlideMenuController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="uIR-LV-f7L"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bbd-aH-bhU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="useShadowEffects" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="menuVCStoryboardID" value="MySlideMenu"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="Main"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="distToTop">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="width">
+                            <real key="value" value="250"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="distToBottom">
+                            <real key="value" value="150"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="comeFromLeft" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="TUs-Yj-2y6" kind="relationship" relationship="rootViewController" id="w64-8U-nhL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KeR-Vk-Eo4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1602" y="1157"/>
         </scene>
     </scenes>
 </document>

@@ -8,12 +8,10 @@
 
 import UIKit
 import JLSlideMenuController
-class SecondViewController: JLSlideViewController {
+class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        addSlideMenu("MySlideMenu",storyboardName: "Main",distToTop: 0, width: 200, distToBottom: 0,comeFromLeft: false)
 
         // Do any additional setup after loading the view.
     }
@@ -28,13 +26,16 @@ class SecondViewController: JLSlideViewController {
     
     @IBAction func showSlideMenu(sender: AnyObject) {
         
-        if menuIsPresented(){
-            hideMenu(true)
+        if let navC = self.navigationController as? JLSlideNavigationController{
+            if navC.menuIsPresented(){
+                navC.hideMenu(true)
+            }
+            else{
+                navC.showMenu(true)
+            }
+            
         }
-        else{
-            showMenu(true)
-        }
-        
+    
     }
     
 }

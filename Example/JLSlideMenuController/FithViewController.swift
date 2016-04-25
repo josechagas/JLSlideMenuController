@@ -1,28 +1,42 @@
 //
-//  FourthViewController.swift
+//  FithViewController.swift
 //  JLSlideMenuController
 //
-//  Created by José Lucas Souza das Chagas on 22/03/16.
+//  Created by José Lucas Souza das Chagas on 24/04/16.
 //  Copyright © 2016 CocoaPods. All rights reserved.
 //
 
 import UIKit
 import JLSlideMenuController
 
-class FourthViewController: UIViewController {
+
+class FithViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-  
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func showSlideMenu(sender: AnyObject) {
+        
+        if let navC = self.navigationController as? JLSlideNavigationController{
+            if navC.menuIsPresented(){
+                navC.hideMenu(true)
+            }
+            else{
+                navC.showMenu(true)
+            }
+            
+        }
+        
+    }
+
 
     /*
     // MARK: - Navigation
@@ -34,18 +48,4 @@ class FourthViewController: UIViewController {
     }
     */
 
-    @IBAction func showSlideMenu(sender: AnyObject) {
-        
-        
-        if let navC = self.navigationController as? JLSlideNavigationController{
-            if navC.menuIsPresented(){
-                navC.hideMenu(true)
-            }
-            else{
-                navC.showMenu(true)
-            }
-
-        }
-        
-    }
 }

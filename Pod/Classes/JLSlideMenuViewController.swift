@@ -10,6 +10,28 @@ import UIKit
 
 public class JLSlideMenuViewController: UIViewController {
 
+    public var attachedNavController:JLSlideNavigationController!
+    
+    
+    //constraints
+    var sideDist:NSLayoutConstraint!
+    var distToTopC:NSLayoutConstraint!
+    var distToBottomC:NSLayoutConstraint!
+    var widthC:NSLayoutConstraint!
+    //
+    
+    /**
+     TRUE to enable the menu FALSE to disable
+     
+     The value of this enable or disable the animations and gestures to show and hide the menu
+     */
+    public var enabled:Bool = true{
+        didSet{
+            if enabled == false{
+                attachedNavController.hideMenu(false)
+            }
+        }
+    }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +60,15 @@ public class JLSlideMenuViewController: UIViewController {
     override public func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    func removeConstraints(){
+        self.view.window!.removeConstraint(sideDist)
+        self.view.window!.removeConstraint(distToTopC)
+        self.view.window!.removeConstraint(distToBottomC)
+        self.view.removeConstraint(widthC)
+        
+    }
+    
     /**
      Call this method to present modally the correct view controller accordingly to some interaction
      with the menu view controller
@@ -48,18 +79,26 @@ public class JLSlideMenuViewController: UIViewController {
      */
     
     public func presentControllerModally(VCId:String,storyboardName:String,animated:Bool){
-        let destinyVC = JLSlideViewController.loadMenuVC(VCId, storyboardName: storyboardName)
+        let destinyVC = JLSlideNavigationController.loadMenuVC(VCId, storyboardName: storyboardName)
         
-        destinyVC.view.frame = self.parentViewController!.view.frame
-        
-        let menuSegue = UIStoryboardSegue(identifier: "actualViewToAnother", source: self.parentViewController!,
+        destinyVC.view.frame = self.attachedNavController.view.frame
+       
+        self.attachedNavController.hideMenu(false)
+
+        let menuSegue = UIStoryboardSegue(identifier: "actualViewToAnother", source: self.attachedNavController,
             destination: destinyVC, performHandler: { () -> Void in
                 
-                self.parentViewController?.presentViewController(destinyVC, animated: animated, completion: nil)
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    
+                    self.attachedNavController.topViewController!.presentViewController(destinyVC, animated: animated, completion: nil)
+                    
+                })
                 
+
         })
         
-        self.prepareForSegue(menuSegue, sender: nil)
+        //self.prepareForSegue(menuSegue, sender: nil)
+        self.attachedNavController.topViewController!.prepareForSegue(menuSegue, sender: nil)
         
         menuSegue.perform()
     }
@@ -76,28 +115,22 @@ public class JLSlideMenuViewController: UIViewController {
      */
     public func showController(VCId:String,storyboardName:String,animated:Bool){
         
-        let destinyVC = JLSlideViewController.loadMenuVC(VCId, storyboardName: storyboardName)
+        let destinyVC = JLSlideNavigationController.loadMenuVC(VCId, storyboardName: storyboardName)
         
-        destinyVC.view.frame = self.parentViewController!.view.frame
+        destinyVC.view.frame = self.attachedNavController.view.frame
         
-        let menuSegue = UIStoryboardSegue(identifier: "actualViewToAnother", source: self.parentViewController!,
+        self.attachedNavController.hideMenu(false)
+
+        let menuSegue = UIStoryboardSegue(identifier: "actualViewToAnother", source: self.attachedNavController,
             destination: destinyVC, performHandler: { () -> Void in
-                
-               
-                if let navC = self.parentViewController!.navigationController{
-                    navC.pushViewController(destinyVC, animated: animated)
-                }
-                else{
-                    print("navigation controller nil no metodo showController")
-                }
-                
-        })
+                self.attachedNavController.pushViewController(destinyVC, animated: animated)
+            })
         
-        self.prepareForSegue(menuSegue, sender: nil)
-        
+        //self.prepareForSegue(menuSegue, sender: nil)
+        self.attachedNavController.prepareForSegue(menuSegue, sender: nil)
+
         menuSegue.perform()
         
-     
     }
     
     /*
