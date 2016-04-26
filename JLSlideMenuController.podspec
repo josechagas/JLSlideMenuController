@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "JLSlideMenuController"
-  s.version          = "0.4.3"
+  s.version          = "0.4.4"
   s.summary          = "JLSlideMenuController, a easy and cusmomizable way to create your slide menu"
 
 # This description is used to generate tags and improve search results.

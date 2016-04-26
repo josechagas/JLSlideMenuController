@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.backItem?.hidesBackButton = true
+        //self.navigationController?.navigationBar.backItem?.hidesBackButton = true
       
         // Do any additional setup after loading the view, typically from a nib.
     }

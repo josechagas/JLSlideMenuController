@@ -35,7 +35,9 @@ public class JLSlideNavigationController: UINavigationController {
      the bolean value that indicates if your menu will come from left or from right of the window.
      */
     @IBInspectable private(set) var comeFromLeft:Bool = true
-    
+    /**
+     A bolean value that indicates to use or not shadow effects
+     */
     @IBInspectable private(set) var useShadowEffects:Bool = false
     
     private var menuContainerView: UIView?
@@ -44,55 +46,54 @@ public class JLSlideNavigationController: UINavigationController {
      */
     private(set) static var myMenuVC:JLSlideMenuViewController?
     
-    
     private static var panGes:UIPanGestureRecognizer?
     
+    private static var screeEdgePanGes:UIScreenEdgePanGestureRecognizer?
+
     /**
      Incicates that the pan gesture that were started enabled or not
      */
+    
     private var panEnabled:Bool = false
     private var lastPanTouch:CGPoint?
     
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
         if let pan = JLSlideNavigationController.panGes{
             pan.enabled = true
         }
+        
+        if let pan = JLSlideNavigationController.screeEdgePanGes{
+            pan.enabled = true
+        }
+
         // Do any additional setup after loading the view.
-    }
-    public override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     public override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         if let _ = self.view.window{
+            
             checkIfShouldAddOrUpdateMenu()
         }
         print(self.view.window!.gestureRecognizers!.count)
     }
     
-    public override func viewWillDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-    }
+   
     
     public override func viewDidDisappear(animated: Bool) {
         super.viewDidAppear(animated)
         if let pan = JLSlideNavigationController.panGes{
             pan.enabled = false
         }
+        
+        if let pan = JLSlideNavigationController.screeEdgePanGes{
+            pan.enabled = false
+        }
+
     }
-    
-    
-    override public func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
     
     class func loadMenuVC(identifier:String,storyboardName:String)->UIViewController{
         
@@ -101,18 +102,109 @@ public class JLSlideNavigationController: UINavigationController {
         return storyboard.instantiateViewControllerWithIdentifier(identifier)
     }
     
-    //MARK: - Gestures
-    private func addPanGesture(){
-        
+    //MARK: - Gestures methods
+    private func addGestures(){
+        //Pan
+
         if let window = self.view.window , pan = JLSlideNavigationController.panGes{
             window.removeGestureRecognizer(pan)
         }
         
         JLSlideNavigationController.panGes = UIPanGestureRecognizer(target: self, action: #selector(JLSlideNavigationController.panAction(_:)))
         
-        //self.view.addGestureRecognizer(panGes!)
         self.view.window?.addGestureRecognizer(JLSlideNavigationController.panGes!)
+
+        
+    
+        //Screen Edge pan
+        if let window = self.view.window , pan = JLSlideNavigationController.screeEdgePanGes{
+            window.removeGestureRecognizer(pan)
+        }
+        
+        JLSlideNavigationController.screeEdgePanGes = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(JLSlideNavigationController.screenEdgePanAction(_:)))
+        
+        
+        
+        if comeFromLeft{
+            
+            JLSlideNavigationController.screeEdgePanGes!.edges = UIRectEdge.Left
+
+        }
+        else{
+            JLSlideNavigationController.screeEdgePanGes!.edges = UIRectEdge.Right
+
+        }
+
+        self.view.window?.addGestureRecognizer(JLSlideNavigationController.screeEdgePanGes!)
+        
+        
+        JLSlideNavigationController.panGes!.requireGestureRecognizerToFail(JLSlideNavigationController.screeEdgePanGes!)
     }
+    
+    public func screenEdgePanAction(edgePan:UIScreenEdgePanGestureRecognizer){
+        let currenLocation = edgePan.locationInView(self.view)
+        
+        if let menuView = menuContainerView where  JLSlideNavigationController.myMenuVC!.enabled{
+            if edgePan.state == UIGestureRecognizerState.Began{
+                panEnabled = false
+                if !menuIsPresented(){
+                    panEnabled = true
+                    lastPanTouch = currenLocation
+                }
+                
+            }
+            else if edgePan.state == UIGestureRecognizerState.Ended{//at the end of pan gesture check if the menu is near to show or hide completelly and then finishes the movement
+                panEnabled = false
+                let menuFrame = menuView.frame
+                if comeFromLeft{
+                    if menuFrame.origin.x <= -menuFrame.size.width/2{
+                        self.hideMenu(true)
+                    }
+                    else if menuFrame.origin.x > -menuFrame.size.width/2{
+                        self.showMenu(true)
+                    }
+                }
+                else{
+                    if menuFrame.origin.x >= self.view.frame.width - menuFrame.size.width/2{
+                        self.hideMenu(true)
+                    }
+                    else if menuFrame.origin.x < self.view.frame.width - menuFrame.size.width/2{
+                        self.showMenu(true)
+                    }
+                }
+                
+                
+            }
+            
+            
+            
+            if panEnabled{//if the pan started at a right point continue
+                menuView.alpha = 1
+                let xDeslocamento = currenLocation.x - lastPanTouch!.x
+                
+                lastPanTouch = currenLocation
+                
+                if comeFromLeft{
+                    if menuView.frame.origin.x + xDeslocamento >= -menuView.frame.width && menuView.frame.origin.x + xDeslocamento <= 0{
+                        
+                        menuView.frame.origin = CGPoint(x:menuView.frame.origin.x + xDeslocamento ,y:menuView.frame.origin.y)
+                        
+                        
+                    }
+                }
+                else{
+                    if menuView.frame.origin.x + xDeslocamento >= self.view.frame.width - menuView.frame.width  && menuView.frame.origin.x + xDeslocamento <= self.view.frame.width{
+                        
+                        menuView.frame.origin = CGPoint(x:menuView.frame.origin.x + xDeslocamento ,y: menuView.frame.origin.y)
+                    }
+                }
+                
+                
+            }
+            
+        }
+    }
+    
     
     
     public func panAction(panGes:UIPanGestureRecognizer){
@@ -127,15 +219,6 @@ public class JLSlideNavigationController: UINavigationController {
                         lastPanTouch = currenLocation
                     }
                 }
-                else{
-                    let area = CGRect(x: comeFromLeft ? 0 : self.view.frame.width - 40, y: 0, width: 40, height: menuView.frame.height)
-                    
-                    if area.contains(currenLocation){
-                        panEnabled = true
-                        lastPanTouch = currenLocation
-                    }
-                }
-                
                 
             }
             else if panGes.state == UIGestureRecognizerState.Ended{//at the end of pan gesture check if the menu is near to show or hide completelly and then finishes the movement
@@ -188,10 +271,26 @@ public class JLSlideNavigationController: UINavigationController {
             }
 
         }
-        
-        
     }
     
+    
+    /*
+    @available(iOS 3.2, *)
+    optional public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
+    
+    // called once per attempt to recognize, so failure requirements can be determined lazily and may be set up between recognizers across view hierarchies
+    // return YES to set up a dynamic failure requirement between gestureRecognizer and otherGestureRecognizer
+    //
+    // note: returning YES is guaranteed to set up the failure requirement. returning NO does not guarantee that there will not be a failure requirement as the other gesture's counterpart delegate or subclass methods may return YES
+    @available(iOS 7.0, *)
+    optional public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOfGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
+    @available(iOS 7.0, *)
+    optional public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailByGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
+    
+    // called before touchesBegan:withEvent: is called on the gesture recognizer for a new touch. return NO to prevent the gesture recognizer from seeing this touch
+    @available(iOS 3.2, *)
+    optional public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool
+    */
     //MARK: - Slide Menu methods
     
     
@@ -217,7 +316,7 @@ public class JLSlideNavigationController: UINavigationController {
     }
     
     private func updateSlideMenu(){
-        addPanGesture()
+        addGestures()
 
         JLSlideNavigationController.myMenuVC!.attachedNavController = self
         JLSlideNavigationController.myMenuVC!.removeConstraints()
@@ -225,16 +324,13 @@ public class JLSlideNavigationController: UINavigationController {
         menuContainerView!.translatesAutoresizingMaskIntoConstraints = false
         menuContainerView!.clipsToBounds = true
         menuContainerView!.tag = 101
-        if useShadowEffects{
-            applyShadowEffects()
-        }
-        else{
-            //remove shadows
-        }
+        
+        applyShadowEffects()
         
         addConstraintsToMenuView()
         
         self.hideMenu(false)
+        
     }
     
     /**
@@ -249,7 +345,7 @@ public class JLSlideNavigationController: UINavigationController {
             view.removeFromSuperview()
         }
         
-        addPanGesture()
+        addGestures()
 
         JLSlideNavigationController.myMenuVC = JLSlideNavigationController.loadMenuVC(menuVCStoryboardID!,storyboardName: storyboardName!) as?JLSlideMenuViewController
         
@@ -262,10 +358,9 @@ public class JLSlideNavigationController: UINavigationController {
         self.view.window!.addSubview(menuContainerView!)
         
         self.view.window!.bringSubviewToFront(menuContainerView!)
+        
+        applyShadowEffects()
 
-        if useShadowEffects{
-            applyShadowEffects()
-        }
         
         addConstraintsToMenuView()
         
@@ -297,15 +392,25 @@ public class JLSlideNavigationController: UINavigationController {
 
     }
 
-    
-    
     private func applyShadowEffects(){
         
-        menuContainerView!.layer.shadowColor = UIColor.blackColor().CGColor
-        menuContainerView!.layer.shadowOffset = CGSize(width: comeFromLeft ? 4 : -4, height: 10)
-        menuContainerView!.layer.shadowOpacity = 0.4
-        menuContainerView!.layer.shadowRadius = 9
-        menuContainerView!.layer.masksToBounds = false
+        if useShadowEffects{
+            menuContainerView!.layer.shadowColor = UIColor.blackColor().CGColor
+            menuContainerView!.layer.shadowOffset = CGSize(width: comeFromLeft ? 4 : -4, height: 10)
+            menuContainerView!.layer.shadowOpacity = 0.4
+            menuContainerView!.layer.shadowRadius = 9
+            menuContainerView!.layer.masksToBounds = false
+
+        }
+        else{
+            menuContainerView!.layer.shadowColor = UIColor.clearColor().CGColor
+            menuContainerView!.layer.shadowOffset = CGSize.zero
+            menuContainerView!.layer.shadowOpacity = 0
+            menuContainerView!.layer.shadowRadius = 0
+            menuContainerView!.layer.masksToBounds = true
+
+        }
+        
     }
     
     
@@ -315,7 +420,8 @@ public class JLSlideNavigationController: UINavigationController {
     public func menuIsPresented()->Bool{
         
         if let mennuView = menuContainerView {
-            return mennuView.frame.origin.x == 0 || mennuView.frame.origin.x == self.view.frame.width - mennuView.frame.width//menuContainerView.alpha == 1
+            return mennuView.frame.origin.x == 0 || (mennuView.frame.origin.x == self.view.frame.width - mennuView.frame.width)
+
         }
         return false
     }
@@ -376,8 +482,6 @@ public class JLSlideNavigationController: UINavigationController {
      - parameter animated: true if you want animated and false if not
      */
     public func hideMenu(animated:Bool){
-        //sideDist.constant = -menuContainerView.frame.width
-        
         if let menuView = menuContainerView where JLSlideNavigationController.myMenuVC!.enabled{
             
             

@@ -32,21 +32,21 @@ import JLSlideMenuController
 
 ##### *Second Step*
 
-Remember that every View Controller that will have this menu should extends `JLSlideViewController`.
+Remember that every Navigation View Controller that will have this menu should extends `JLSlideNavigationController`.
 Example:
     
 ```swift
-class ViewController: JLSlideViewController
+class myNavController: JLSlideNavigationController
 ```
     
 ##### *Third Step*
 
-Now you have to add the menu into your view controller.
-For that call this method.
-    
-```swift
-addSlideMenu(menuVCStoryboardID:String,storyboardName:String,distToTop:CGFloat,width:CGFloat,height:CGFloat,comeFromLeft:Bool)
-```
+Now what you have to go to inspector of your navigation controller and set the properties like the id of your menu vc, name of the storyboard where your menu is.
+
+### *OBS*
+    Diferent navigation controllers can have the same instance of the menu vc, for that you just have to choose the same id and storyboard name.
+
+
 
 #### *Fourth Step*
 

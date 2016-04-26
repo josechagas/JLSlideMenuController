@@ -13,11 +13,14 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //self.navigationController?.topViewController
         // Do any additional setup after loading the view.
     }
     
         
-    
+    override func viewDidAppear(animated: Bool) {
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
