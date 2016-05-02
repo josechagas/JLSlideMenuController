@@ -44,9 +44,8 @@ class myNavController: JLSlideNavigationController
 Now what you have to go to inspector of your navigation controller and set the properties like the id of your menu vc, name of the storyboard where your menu is.
 
 ### *OBS*
-    Diferent navigation controllers can have the same instance of the menu vc, for that you just have to choose the same id and storyboard name.
 
-
+Diferent navigation controllers can have the same instance of the menu vc, for that you just have to choose the same id and storyboard name.
 
 #### *Fourth Step*
 
@@ -80,7 +79,7 @@ showController(VCId:String,storyboardName:String,animated:Bool)
     
 ## Author
 
-José Lucas, joselucas1994@yahoo.com.br
+José Lucas
 
 ## License
 

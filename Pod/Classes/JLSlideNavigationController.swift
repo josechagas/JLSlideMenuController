@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class JLSlideNavigationController: UINavigationController {
+public class JLSlideNavigationController: UINavigationController,UINavigationControllerDelegate {
 
     
     /**
@@ -60,6 +60,7 @@ public class JLSlideNavigationController: UINavigationController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        self.delegate = self
         if let pan = JLSlideNavigationController.panGes{
             pan.enabled = true
         }
@@ -92,14 +93,37 @@ public class JLSlideNavigationController: UINavigationController {
         if let pan = JLSlideNavigationController.screeEdgePanGes{
             pan.enabled = false
         }
-
+    
     }
+    
+    
     
     class func loadMenuVC(identifier:String,storyboardName:String)->UIViewController{
         
         let storyboard = UIStoryboard(name: storyboardName, bundle: NSBundle.mainBundle())
         
         return storyboard.instantiateViewControllerWithIdentifier(identifier)
+    }
+    
+    
+    //MARK: - NavigationController delegate methods
+    
+    public func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
+        if let menuView = menuContainerView , window = self.view.window{
+            window.bringSubviewToFront(menuView)
+        }
+        let subViews = viewController.view.subviews
+        if let screenEdgeGes = JLSlideNavigationController.screeEdgePanGes{
+            for subView in subViews{
+                if let gestures = subView.gestureRecognizers{
+                    for gesture in gestures{
+                        gesture.requireGestureRecognizerToFail(screenEdgeGes)
+                    }
+                }
+            }
+        }
+        
+       
     }
     
     //MARK: - Gestures methods
@@ -114,8 +138,6 @@ public class JLSlideNavigationController: UINavigationController {
         
         self.view.window?.addGestureRecognizer(JLSlideNavigationController.panGes!)
 
-        
-    
         //Screen Edge pan
         if let window = self.view.window , pan = JLSlideNavigationController.screeEdgePanGes{
             window.removeGestureRecognizer(pan)
@@ -139,6 +161,20 @@ public class JLSlideNavigationController: UINavigationController {
         
         
         JLSlideNavigationController.panGes!.requireGestureRecognizerToFail(JLSlideNavigationController.screeEdgePanGes!)
+        
+        
+        if let screenEdgeGes = JLSlideNavigationController.screeEdgePanGes, topViewC = topViewController{
+            let subViews = topViewC.view.subviews
+
+            for subView in subViews{
+                if let gestures = subView.gestureRecognizers{
+                    for gesture in gestures{
+                        gesture.requireGestureRecognizerToFail(screenEdgeGes)
+                    }
+                }
+            }
+        }
+
     }
     
     public func screenEdgePanAction(edgePan:UIScreenEdgePanGestureRecognizer){
@@ -274,23 +310,6 @@ public class JLSlideNavigationController: UINavigationController {
     }
     
     
-    /*
-    @available(iOS 3.2, *)
-    optional public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
-    
-    // called once per attempt to recognize, so failure requirements can be determined lazily and may be set up between recognizers across view hierarchies
-    // return YES to set up a dynamic failure requirement between gestureRecognizer and otherGestureRecognizer
-    //
-    // note: returning YES is guaranteed to set up the failure requirement. returning NO does not guarantee that there will not be a failure requirement as the other gesture's counterpart delegate or subclass methods may return YES
-    @available(iOS 7.0, *)
-    optional public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOfGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
-    @available(iOS 7.0, *)
-    optional public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailByGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
-    
-    // called before touchesBegan:withEvent: is called on the gesture recognizer for a new touch. return NO to prevent the gesture recognizer from seeing this touch
-    @available(iOS 3.2, *)
-    optional public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool
-    */
     //MARK: - Slide Menu methods
     
     
