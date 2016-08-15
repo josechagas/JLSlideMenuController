@@ -28,7 +28,7 @@ public class JLSlideMenuViewController: UIViewController {
     public var enabled:Bool = true{
         didSet{
             if enabled == false{
-                attachedNavController.hideMenu(false)
+                attachedNavController.hideMenu(Animated: false)
             }
         }
     }
@@ -83,7 +83,7 @@ public class JLSlideMenuViewController: UIViewController {
         
         destinyVC.view.frame = self.attachedNavController.view.frame
        
-        self.attachedNavController.hideMenu(false)
+        self.attachedNavController.hideMenu(Animated: false)
 
         let menuSegue = UIStoryboardSegue(identifier: "actualViewToAnother", source: self.attachedNavController,
             destination: destinyVC, performHandler: { () -> Void in
@@ -119,9 +119,9 @@ public class JLSlideMenuViewController: UIViewController {
         
         destinyVC.view.frame = self.attachedNavController.view.frame
         
-        self.attachedNavController.hideMenu(false)
+        self.attachedNavController.hideMenu(Animated: false)
 
-        let menuSegue = UIStoryboardSegue(identifier: "actualViewToAnother", source: self.attachedNavController,
+        let menuSegue = UIStoryboardSegue(identifier: "actualViewTo\(storyboardName)", source: self.attachedNavController,
             destination: destinyVC, performHandler: { () -> Void in
                 self.attachedNavController.pushViewController(destinyVC, animated: animated)
             })
@@ -133,14 +133,5 @@ public class JLSlideMenuViewController: UIViewController {
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  
 }
