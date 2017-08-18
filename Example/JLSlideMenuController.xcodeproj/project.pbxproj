@@ -14,6 +14,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		74AB43D61B714C1BAB4B254E /* Pods_JLSlideMenuController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B55572F1DC193BA8587857 /* Pods_JLSlideMenuController_Example.framework */; };
+		880E47141F451F60001839CD /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880E47131F451F60001839CD /* TestVC.swift */; };
 		882AE4881D51669100A8CA50 /* MyMenu2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882AE4871D51669100A8CA50 /* MyMenu2ViewController.swift */; };
 		88EABD601CA014AC006408C3 /* MyMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EABD5F1CA014AC006408C3 /* MyMenuViewController.swift */; };
 		88F10A031D52B613006388E1 /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F10A021D52B613006388E1 /* OtherViewController.swift */; };
@@ -46,6 +47,7 @@
 		66B63F838909E39AD14F20EC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		72744BFB356E3FFDF8C6AAA1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		81E8FF7DA9C5B16FC53214A1 /* Pods-JLSlideMenuController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLSlideMenuController_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLSlideMenuController_Example/Pods-JLSlideMenuController_Example.release.xcconfig"; sourceTree = "<group>"; };
+		880E47131F451F60001839CD /* TestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		882AE4871D51669100A8CA50 /* MyMenu2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMenu2ViewController.swift; sourceTree = "<group>"; };
 		88EABD5F1CA014AC006408C3 /* MyMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMenuViewController.swift; sourceTree = "<group>"; };
 		88F10A021D52B613006388E1 /* OtherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		607FACD21AFB9204008FA782 /* Example for JLSlideMenuController */ = {
 			isa = PBXGroup;
 			children = (
+				880E47121F451F45001839CD /* Tests */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -146,6 +149,14 @@
 				66B63F838909E39AD14F20EC /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		880E47121F451F45001839CD /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				880E47131F451F60001839CD /* TestVC.swift */,
+			);
+			name = Tests;
 			sourceTree = "<group>";
 		};
 		B60F69DF08C12C8F012003E2 /* Frameworks */ = {
@@ -219,14 +230,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0830;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0830;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -372,6 +385,7 @@
 				88EABD601CA014AC006408C3 /* MyMenuViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				880E47141F451F60001839CD /* TestVC.swift in Sources */,
 				88F10A031D52B613006388E1 /* OtherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,8 +441,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -472,8 +488,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -492,6 +510,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -500,12 +519,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FD71D882A7E432D099380843 /* Pods-JLSlideMenuController_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JLSlideMenuController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -513,12 +534,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 81E8FF7DA9C5B16FC53214A1 /* Pods-JLSlideMenuController_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JLSlideMenuController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -526,6 +549,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C98295C4CF4684E052758BD4 /* Pods-JLSlideMenuController_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -539,6 +563,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JLSlideMenuController_Example.app/JLSlideMenuController_Example";
 			};
 			name = Debug;
@@ -547,6 +572,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C5A9E2D91C148D0264D89A69 /* Pods-JLSlideMenuController_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -556,6 +582,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JLSlideMenuController_Example.app/JLSlideMenuController_Example";
 			};
 			name = Release;

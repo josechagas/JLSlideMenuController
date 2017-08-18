@@ -20,11 +20,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-              
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
     }
@@ -36,7 +35,7 @@ class ViewController: UIViewController {
     }
 
         
-    @IBAction func showSlideMenu(sender: AnyObject) {
+    @IBAction func showSlideMenu(_ sender: AnyObject) {
         
         if let nav = self.navigationController as? JLSlideNavigationController{
             

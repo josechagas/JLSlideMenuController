@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class JLSlideMenuViewController: UIViewController {
+open class JLSlideMenuViewController: UIViewController {
 
-    public var attachedNavController:JLSlideNavigationController!
+    open var attachedNavController:JLSlideNavigationController!
     
     
     //constraints
@@ -25,7 +25,7 @@ public class JLSlideMenuViewController: UIViewController {
      
      The value of this enable or disable the animations and gestures to show and hide the menu
      */
-    public var enabled:Bool = true{
+    open var enabled:Bool = true{
         didSet{
             if enabled == false{
                 attachedNavController.hideMenu(Animated: false)
@@ -33,31 +33,31 @@ public class JLSlideMenuViewController: UIViewController {
         }
     }
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
-    public override func viewDidAppear(animated: Bool) {
+    open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.view.layoutIfNeeded()
     }
 
-    override public func didMoveToParentViewController(parent: UIViewController?) {
-        super.didMoveToParentViewController(parent)
+    override open func didMove(toParentViewController parent: UIViewController?) {
+        super.didMove(toParentViewController: parent)
         //print(parent!.childViewControllers)
     }
 
-    public override func canBecomeFirstResponder() -> Bool {
+    open override var canBecomeFirstResponder : Bool {
         return true
     }
     
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override public func prefersStatusBarHidden() -> Bool {
+    override open var prefersStatusBarHidden : Bool {
         return true
     }
     
@@ -66,7 +66,6 @@ public class JLSlideMenuViewController: UIViewController {
         self.view.window!.removeConstraint(distToTopC)
         self.view.window!.removeConstraint(distToBottomC)
         self.view.removeConstraint(widthC)
-        
     }
     
     /**
@@ -78,7 +77,7 @@ public class JLSlideMenuViewController: UIViewController {
      - parameter animated: true to transition with some animation or not
      */
     
-    public func presentControllerModally(VCId:String,storyboardName:String,animated:Bool){
+    open func presentControllerModally(_ VCId:String,storyboardName:String,animated:Bool){
         let destinyVC = JLSlideNavigationController.loadMenuVC(VCId, storyboardName: storyboardName)
         
         destinyVC.view.frame = self.attachedNavController.view.frame
@@ -88,9 +87,9 @@ public class JLSlideMenuViewController: UIViewController {
         let menuSegue = UIStoryboardSegue(identifier: "actualViewToAnother", source: self.attachedNavController,
             destination: destinyVC, performHandler: { () -> Void in
                 
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                DispatchQueue.main.async(execute: { () -> Void in
                     
-                    self.attachedNavController.topViewController!.presentViewController(destinyVC, animated: animated, completion: nil)
+                    self.attachedNavController.topViewController!.present(destinyVC, animated: animated, completion: nil)
                     
                 })
                 
@@ -98,7 +97,7 @@ public class JLSlideMenuViewController: UIViewController {
         })
         
         //self.prepareForSegue(menuSegue, sender: nil)
-        self.attachedNavController.topViewController!.prepareForSegue(menuSegue, sender: nil)
+        self.attachedNavController.topViewController!.prepare(for: menuSegue, sender: nil)
         
         menuSegue.perform()
     }
@@ -113,7 +112,7 @@ public class JLSlideMenuViewController: UIViewController {
      - parameter storyboardName: the name of the storyboard where the view controller is
      - parameter animated: true to transition with some animation or not
      */
-    public func showController(VCId:String,storyboardName:String,animated:Bool){
+    open func showController(_ VCId:String,storyboardName:String,animated:Bool){
         
         let destinyVC = JLSlideNavigationController.loadMenuVC(VCId, storyboardName: storyboardName)
         
@@ -127,7 +126,7 @@ public class JLSlideMenuViewController: UIViewController {
             })
         
         //self.prepareForSegue(menuSegue, sender: nil)
-        self.attachedNavController.prepareForSegue(menuSegue, sender: nil)
+        self.attachedNavController.prepare(for: menuSegue, sender: nil)
 
         menuSegue.perform()
         

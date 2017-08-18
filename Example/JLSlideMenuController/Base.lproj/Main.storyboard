@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="D12-ai-9k0">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D12-ai-9k0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -15,16 +19,17 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="C77-RY-AcD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="ET2-3i-Dfe" kind="relationship" relationship="viewControllers" id="g1h-uy-bW1"/>
                         <segue destination="KVZ-l5-enk" kind="relationship" relationship="viewControllers" id="OhH-cw-PZi"/>
+                        <segue destination="geu-3k-QV6" kind="relationship" relationship="viewControllers" id="TAa-uV-1aB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzv-7G-hFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1806" y="378"/>
+            <point key="canvasLocation" x="-1818" y="328"/>
         </scene>
         <!--Item-->
         <scene sceneID="uJ6-AB-4ui">
@@ -35,18 +40,18 @@
                         <viewControllerLayoutGuide type="bottom" id="Vzk-Vi-Y9a"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LbT-H2-B1x">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PJ-gW-nmZ">
-                                <rect key="frame" x="30" y="283" width="540" height="33.5"/>
+                                <rect key="frame" x="26" y="308.5" width="323" height="50.5"/>
                                 <string key="text">JLSlideViewController has two styles, one that its in front all other views and another one that it comes from behind all other views.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="3PJ-gW-nmZ" secondAttribute="trailing" constant="10" id="Fru-AG-k4W"/>
                             <constraint firstItem="3PJ-gW-nmZ" firstAttribute="leading" secondItem="LbT-H2-B1x" secondAttribute="leadingMargin" constant="10" id="RYI-cf-6xe"/>
@@ -65,6 +70,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uq4-Rm-JwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-774" y="1157"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="amk-bg-k7w">
+            <objects>
+                <navigationController id="geu-3k-QV6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="V9B-m5-Rnx"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l6p-rB-0th">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XuP-z5-Z24" kind="relationship" relationship="rootViewController" id="nD4-r2-b57"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MGr-c7-psL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1818" y="-490"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="6ZD-j9-9wY">
+            <objects>
+                <viewController id="XuP-z5-Z24" customClass="TestVC" customModule="JLSlideMenuController_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UeK-ci-RLG"/>
+                        <viewControllerLayoutGuide type="bottom" id="xrp-Af-bMf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uRl-ud-bSC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="7yq-ea-ymh">
+                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="tGw-qk-Cql">
+                            <connections>
+                                <action selector="menuButtonAction:" destination="XuP-z5-Z24" id="BWC-Gz-aV4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4a2-cq-dVT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1111" y="-489"/>
         </scene>
         <!--Item-->
         <scene sceneID="seF-1e-d27">
@@ -108,17 +155,17 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the example project of JLSlideMenuViewController" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUK-CD-4ho">
-                                <rect key="frame" x="25" y="291.5" width="550" height="17"/>
+                                <rect key="frame" x="21" y="317" width="333" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cUK-CD-4ho" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="5" id="9rc-cY-fua"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cUK-CD-4ho" secondAttribute="trailing" constant="5" id="Mrx-0k-5Rw"/>
@@ -147,20 +194,20 @@
                         <viewControllerLayoutGuide type="bottom" id="77i-lc-g5s"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Wyr-ge-Lgp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxK-iF-ucX">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Lck-rF-UsY">
-                                        <rect key="frame" x="10" y="20" width="580" height="24"/>
+                                        <rect key="frame" x="10" y="20" width="355" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.17747506830788062" green="0.65356184046201216" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.17747506830788062" green="0.65356184046201216" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Lck-rF-UsY" secondAttribute="trailing" constant="10" id="P7W-NS-4K8"/>
                                     <constraint firstAttribute="bottom" secondItem="Lck-rF-UsY" secondAttribute="bottom" constant="20" id="Vhf-Hz-HpJ"/>
@@ -169,21 +216,21 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JrA-rC-T6N">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="8dE-C2-a8a" style="IBUITableViewCellStyleDefault" id="kAl-xl-Lf9">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kAl-xl-Lf9" id="TSp-FS-md1">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8dE-C2-a8a">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="44"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -221,18 +268,18 @@
                         <viewControllerLayoutGuide type="bottom" id="yXb-zq-StX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9sr-mQ-MXx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9c-Ul-iUS">
-                                <rect key="frame" x="25" y="283" width="550" height="33.5"/>
+                                <rect key="frame" x="21" y="308.5" width="333" height="50.5"/>
                                 <string key="text">If you want to have more than one version of menu do not worry each JLSlideNavigationController can have it`s own type as you can see on this example</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="P9c-Ul-iUS" secondAttribute="trailing" constant="5" id="1qn-cx-fhl"/>
                             <constraint firstItem="P9c-Ul-iUS" firstAttribute="leading" secondItem="9sr-mQ-MXx" secondAttribute="leadingMargin" constant="5" id="R9J-ZF-Atp"/>
@@ -250,7 +297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5S-CS-7F1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="727" y="-490"/>
+            <point key="canvasLocation" x="2194" y="-479"/>
         </scene>
         <!--SecondVC-->
         <scene sceneID="E2b-9q-MUn">
@@ -261,17 +308,17 @@
                         <viewControllerLayoutGuide type="bottom" id="9xb-fq-O3X"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="de3-zk-JnY">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JLSlideMenuController allows you in a easy way to create your slide menu, using your own storyboard!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eiz-1m-8gp">
-                                <rect key="frame" x="25" y="283" width="550" height="33.5"/>
+                                <rect key="frame" x="21" y="317" width="333" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Eiz-1m-8gp" firstAttribute="centerY" secondItem="de3-zk-JnY" secondAttribute="centerY" id="47X-BZ-UNV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Eiz-1m-8gp" secondAttribute="trailing" constant="5" id="5uU-dR-5u0"/>
@@ -290,7 +337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93I-eF-Hpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-649" y="-490"/>
+            <point key="canvasLocation" x="818" y="-479"/>
         </scene>
         <!--ThirdVC-->
         <scene sceneID="WYf-Ff-089">
@@ -301,32 +348,32 @@
                         <viewControllerLayoutGuide type="bottom" id="nxl-dp-nSA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DT5-FU-5yE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMl-mk-xhB">
-                                <rect key="frame" x="222" y="385" width="157" height="30"/>
-                                <color key="backgroundColor" red="0.56791306599755487" green="1" blue="0.57638077949976552" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="109" y="418.5" width="157" height="30"/>
+                                <color key="backgroundColor" red="0.56791306599755487" green="1" blue="0.57638077949976552" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="157" id="EZ4-xy-sad"/>
                                     <constraint firstAttribute="height" constant="30" id="QeJ-Uh-NYI"/>
                                 </constraints>
                                 <state key="normal" title="dismiss ViewController">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="dismissButtonAction:" destination="vqM-cr-3Md" eventType="touchUpInside" id="z0R-qp-OiS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZY-Qd-3La">
-                                <rect key="frame" x="25" y="274.5" width="550" height="50.5"/>
+                                <rect key="frame" x="21" y="291.5" width="333" height="84"/>
                                 <string key="text">After creating your menu View Controller, directly on inspector of a JLSlideNavigationController you can configure your slide Menu,for example choosing the right VC, its dimensions(width, height), etc</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.70457668377114113" green="0.97789868276833503" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.70457668377114113" green="0.97789868276833503" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MZY-Qd-3La" firstAttribute="centerY" secondItem="DT5-FU-5yE" secondAttribute="centerY" id="6DQ-29-Hp4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MZY-Qd-3La" secondAttribute="trailing" constant="5" id="D1B-4o-6Hz"/>
@@ -347,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnQ-f4-oTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="-490"/>
+            <point key="canvasLocation" x="1503" y="-479"/>
         </scene>
         <!--Item-->
         <scene sceneID="yoB-us-tKs">
@@ -391,20 +438,20 @@
                         <viewControllerLayoutGuide type="bottom" id="wUZ-Oe-F80"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2kk-fc-OtC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lLO-jl-MiA">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Menu 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vle-Dx-RXL">
-                                        <rect key="frame" x="10" y="20" width="580" height="24"/>
+                                        <rect key="frame" x="10" y="20" width="355" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.2232518184687774" green="0.86953816371681414" blue="0.16935285392672769" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.2232518184687774" green="0.86953816371681414" blue="0.16935285392672769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Vle-Dx-RXL" firstAttribute="leading" secondItem="lLO-jl-MiA" secondAttribute="leading" constant="10" id="NJ6-Mi-SwN"/>
                                     <constraint firstAttribute="bottom" secondItem="Vle-Dx-RXL" secondAttribute="bottom" constant="20" id="dU7-Rn-VMe"/>
@@ -413,21 +460,21 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B7a-Vc-saU">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="3UJ-Xq-D2I" style="IBUITableViewCellStyleDefault" id="N8y-Bz-CBQ">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N8y-Bz-CBQ" id="ueu-p7-PYH">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3UJ-Xq-D2I">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="44"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -465,17 +512,17 @@
                         <viewControllerLayoutGuide type="bottom" id="utK-UP-FFb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nQ3-Ly-5LU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is JLSlideViewController, I hope it will help you ! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGy-Mz-gS3">
-                                <rect key="frame" x="25" y="291.5" width="550" height="17"/>
+                                <rect key="frame" x="21" y="317" width="333" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WGy-Mz-gS3" firstAttribute="centerY" secondItem="nQ3-Ly-5LU" secondAttribute="centerY" id="dgD-x3-6Hj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WGy-Mz-gS3" secondAttribute="trailing" constant="5" id="gCl-14-2Wf"/>

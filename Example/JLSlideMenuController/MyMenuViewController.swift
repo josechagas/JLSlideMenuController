@@ -39,17 +39,17 @@ class MyMenuViewController: JLSlideMenuViewController,UITableViewDelegate,UITabl
     
     //MARK: Data Source methods
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         
         
         cell?.textLabel?.text = "Button \(indexPath.row)"
@@ -59,14 +59,15 @@ class MyMenuViewController: JLSlideMenuViewController,UITableViewDelegate,UITabl
         return cell!
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
     
     //MARK: Delegate methods
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "teste", sender: nil)
+        /*
         if indexPath.row == 0{
             self.showController("SecondVC", storyboardName: "Main", animated: true)
 
@@ -76,7 +77,7 @@ class MyMenuViewController: JLSlideMenuViewController,UITableViewDelegate,UITabl
         }
         else if indexPath.row == 2{
             self.showController("FourthVC", storyboardName: "Main", animated: true)
-        }
+        }*/
         
     }
     

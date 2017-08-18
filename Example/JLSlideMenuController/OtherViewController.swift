@@ -22,7 +22,7 @@ class OtherViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func showMenuAction(sender: AnyObject) {
+    @IBAction func showMenuAction(_ sender: AnyObject) {
         
         if let slideNVC = self.navigationController as? JLSlideNavigationController{
             !slideNVC.menuIsPresented() ? slideNVC.showMenu(Animated: true) : slideNVC.hideMenu(Animated: true)
@@ -30,9 +30,9 @@ class OtherViewController: UIViewController {
         
     }
 
-    @IBAction func dismissButtonAction(sender: AnyObject) {
+    @IBAction func dismissButtonAction(_ sender: AnyObject) {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
     }
     /*
